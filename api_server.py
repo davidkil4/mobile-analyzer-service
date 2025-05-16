@@ -52,8 +52,15 @@ setup_user_module_routes(app)
 conversations: Dict[str, List[Dict[str, Any]]] = {}
 analysis_results: Dict[str, List[Any]] = {}  # Stores all analysis results per conversation
 
-# Easily configurable batch size (change here as needed, or load from env)
+# Track conversation turns (messages grouped by speaker)
+conversation_turns: Dict[str, List[List[Dict[str, Any]]]] = {}  # Dict[conversation_id, List[List[message]]]
+
+# Easily configurable batch sizes (change here as needed, or load from env)
 BATCH_SIZE = 8  # Decreased batch size to 8 utterances for more frequent analysis
+TURNS_BATCH_SIZE = 8  # Number of conversation turns to batch before analysis
+
+# Flag to enable turn-based processing instead of fixed-size batching
+USE_TURN_BASED_PROCESSING = True  # Set to False to revert to original fixed-size batching
 
 # Directory for saving clustering results
 OUTPUT_DIR = "clustering_output"  # Directory where clustering results are stored by default
@@ -75,7 +82,7 @@ class AnalysisResponse(BaseModel):
 async def receive_message(msg: MessageRequest):
     """
     Receives a message from the frontend and adds it to the conversation batch.
-    When BATCH_SIZE messages are collected, triggers analysis and returns the results.
+    When enough messages or turns are collected, triggers analysis and returns the results.
     """
     # DEBUG LOGGING: Log detailed information about the incoming message
     logger.info(f"[DEBUG] Received message for conversation {msg.conversation_id}")
@@ -88,19 +95,136 @@ async def receive_message(msg: MessageRequest):
     # DEBUG LOGGING: Log the conversation state before adding the new message
     logger.info(f"[DEBUG] Conversation {msg.conversation_id} before adding message: {len(conv)} messages")
     
-    conv.append(msg.dict())
+    # Add the message to the conversation
+    message_data = msg.dict()
+    conv.append(message_data)
     logger.info(f"Received message for conversation {msg.conversation_id}: {msg.text}")
     
     # DEBUG LOGGING: Log the conversation state after adding the new message
     logger.info(f"[DEBUG] Conversation {msg.conversation_id} after adding message: {len(conv)} messages")
 
+    # Default response
     response = {"status": "received", "batch_analyzed": False}
 
-    # If we've collected BATCH_SIZE messages, trigger analysis
-    if len(conv) % BATCH_SIZE == 0:
+    # If turn-based processing is enabled, track conversation turns
+    if USE_TURN_BASED_PROCESSING:
+        # Initialize turns for this conversation if not already done
+        turns = conversation_turns.setdefault(msg.conversation_id, [])
+        
+        # Check if this is the first message or a new turn (speaker changed)
+        if not turns or (turns[-1] and turns[-1][-1]["speaker"] != msg.speaker):
+            # Start a new turn
+            turns.append([message_data])
+            logger.info(f"[DEBUG] Started new turn for speaker: {msg.speaker}")
+        else:
+            # Add to the current turn
+            turns[-1].append(message_data)
+            logger.info(f"[DEBUG] Added message to existing turn for speaker: {msg.speaker}")
+        
+        # Log the current turn count
+        logger.info(f"[DEBUG] Current turn count: {len(turns)}/{TURNS_BATCH_SIZE}")
+        
+        # If we've collected TURNS_BATCH_SIZE turns, trigger analysis
+        if len(turns) >= TURNS_BATCH_SIZE:
+            # DEBUG LOGGING: Log turn-based batch processing information
+            batch_id = f"turn_batch_{msg.conversation_id}_{len(turns) // TURNS_BATCH_SIZE}"
+            logger.info(f"[DEBUG] Processing turn-based batch {batch_id} with {len(turns)} turns")
+            
+            # Combine all messages in each turn into a single message
+            combined_messages = []
+            for turn_idx, turn in enumerate(turns):
+                # Skip empty turns
+                if not turn:
+                    continue
+                    
+                # Get the first message in the turn for metadata
+                first_msg = turn[0]
+                
+                # Combine all texts from this turn with spaces
+                combined_text = " ".join([m["text"] for m in turn])
+                
+                # Create a single message representing the entire turn
+                combined_message = {
+                    "user_id": first_msg["user_id"],
+                    "speaker": first_msg["speaker"],
+                    "text": combined_text,
+                    "timestamp": first_msg.get("timestamp")
+                }
+                
+                combined_messages.append(combined_message)
+            
+            # Log total turn count
+            logger.info(f"[DEBUG] Processing {len(combined_messages)} turns as analysis units")
+            
+            # Prepare InputUtterance objects for each combined turn message
+            input_utterances = [InputUtterance(**{
+                "id": m["user_id"] + "-turn-" + str(idx),
+                "speaker": m["speaker"],
+                "text": m["text"],
+                "timestamp": m.get("timestamp")
+            }) for idx, m in enumerate(combined_messages)]
+            
+            # DEBUG LOGGING: Log the combined turn messages being sent for analysis
+            for i, message in enumerate(combined_messages):
+                logger.info(f"[DEBUG] Turn batch {batch_id} turn {i+1}: speaker={message['speaker']}, text={message['text'][:30]}...")
+            
+            # Run preprocessing and analysis with timing
+            start_time = time.time()
+            logger.info(f"[DEBUG] Starting turn-based batch analysis task for batch {batch_id}")
+            preprocessed = run_preprocessing_batch(input_utterances)
+            
+            # Add context to each preprocessed utterance
+            for unit in preprocessed:
+                original_utterance_id = unit.original_utterance_id
+                # Extract the turn index from the ID (format: user_id-turn-idx)
+                turn_parts = original_utterance_id.split('-')
+                if len(turn_parts) >= 3 and turn_parts[-2] == "turn":
+                    turn_idx = int(turn_parts[-1])
+                    if 0 <= turn_idx < len(combined_messages):
+                        # Get up to 3 preceding turns as context
+                        start_idx = max(0, turn_idx - 3)
+                        context_turns = combined_messages[start_idx:turn_idx]
+                        # Create ContextUtterance objects
+                        unit.context = [ContextUtterance(speaker=m["speaker"], text=m["text"]) 
+                                      for m in context_turns]
+                    else:
+                        # If not found, set empty context
+                        unit.context = []
+                        logger.warning(f"Could not find original turn {turn_idx} for context")
+                else:
+                    # If ID format doesn't match expected pattern, set empty context
+                    unit.context = []
+                    logger.warning(f"Could not parse turn index from utterance ID {original_utterance_id}")
+            
+            batch_analysis = await run_analysis_batch(preprocessed)
+            analysis_time = time.time() - start_time
+            
+            # Accumulate all batch analysis results for clustering
+            all_results = analysis_results.setdefault(msg.conversation_id, [])
+            all_results.extend(batch_analysis)
+            
+            # Reset the turns for this conversation
+            conversation_turns[msg.conversation_id] = []
+            
+            # Prepare response
+            batch_id = str(uuid.uuid4())
+            response = {
+                "status": "analyzed",
+                "batch_analyzed": True,
+                "batch_id": batch_id,
+                "analysis_time_seconds": round(analysis_time, 2),
+                "turn_based": True,
+                "turns_count": TURNS_BATCH_SIZE,
+                "messages_count": len(combined_messages),
+                "analysis_results": [ar.dict() if hasattr(ar, 'dict') else ar for ar in batch_analysis]
+            }
+            logger.info(f"Turn-based batch analyzed for conversation {msg.conversation_id}, batch_id={batch_id}, time={analysis_time:.2f}s")
+    
+    # If turn-based processing is disabled or we're using the original fixed-size batching
+    elif len(conv) % BATCH_SIZE == 0:
         # DEBUG LOGGING: Log batch processing information
         batch_id = f"batch_{msg.conversation_id}_{len(conv) // BATCH_SIZE}"
-        logger.info(f"[DEBUG] Processing batch {batch_id} with {BATCH_SIZE} messages")
+        logger.info(f"[DEBUG] Processing fixed-size batch {batch_id} with {BATCH_SIZE} messages")
         
         # Prepare InputUtterance objects for the batch
         batch_msgs = conv[-BATCH_SIZE:]
@@ -154,9 +278,11 @@ async def receive_message(msg: MessageRequest):
             "batch_analyzed": True,
             "batch_id": batch_id,
             "analysis_time_seconds": round(analysis_time, 2),
+            "turn_based": False,
             "analysis_results": [ar.dict() if hasattr(ar, 'dict') else ar for ar in batch_analysis]
         }
-        logger.info(f"Batch analyzed for conversation {msg.conversation_id}, batch_id={batch_id}, time={analysis_time:.2f}s")
+        logger.info(f"Fixed-size batch analyzed for conversation {msg.conversation_id}, batch_id={batch_id}, time={analysis_time:.2f}s")
+    
     return response
 
 @app.post("/end_conversation/{conversation_id}")
@@ -297,61 +423,133 @@ async def end_conversation(conversation_id: str, background_tasks: BackgroundTas
         logger.info(f"[DEBUG] Message {i+1}: speaker={message['speaker']}, text={message['text'][:30]}...")
     
     final_batch_results = []
-    batch_id = str(uuid.uuid4())
-    logger.info(f"[DEBUG] Generated batch_id for final analysis: {batch_id}")
-    # Analyze remaining messages if any
-    if remaining:
-        logger.info(f"[DEBUG] Processing remaining {remaining} messages for conversation {conversation_id}")
-        batch_msgs = conv[-remaining:]
+    # Process any remaining messages in the conversation
+    if USE_TURN_BASED_PROCESSING:
+        # Process any remaining turns
+        turns = conversation_turns.get(conversation_id, [])
+        if turns:
+            remaining_turns = len(turns)
+            logger.info(f"Processing {remaining_turns} remaining turns for conversation {conversation_id}")
+            
+            # Combine all messages in each turn into a single message
+            combined_messages = []
+            for turn_idx, turn in enumerate(turns):
+                # Skip empty turns
+                if not turn:
+                    continue
+                    
+                # Get the first message in the turn for metadata
+                first_msg = turn[0]
+                
+                # Combine all texts from this turn with spaces
+                combined_text = " ".join([m["text"] for m in turn])
+                
+                # Create a single message representing the entire turn
+                combined_message = {
+                    "user_id": first_msg["user_id"],
+                    "speaker": first_msg["speaker"],
+                    "text": combined_text,
+                    "timestamp": first_msg.get("timestamp")
+                }
+                
+                combined_messages.append(combined_message)
+            
+            if combined_messages:
+                logger.info(f"Processing {len(combined_messages)} combined turns as analysis units")
+                
+                # Prepare InputUtterance objects for each combined turn message
+                input_utterances = [InputUtterance(**{
+                    "id": m["user_id"] + "-turn-" + str(idx),
+                    "speaker": m["speaker"],
+                    "text": m["text"],
+                    "timestamp": m.get("timestamp")
+                }) for idx, m in enumerate(combined_messages)]
+                
+                # Run preprocessing and analysis
+                preprocessed = run_preprocessing_batch(input_utterances)
+                
+                # Add context to each preprocessed utterance
+                for unit in preprocessed:
+                    original_utterance_id = unit.original_utterance_id
+                    # Extract the turn index from the ID (format: user_id-turn-idx)
+                    turn_parts = original_utterance_id.split('-')
+                    if len(turn_parts) >= 3 and turn_parts[-2] == "turn":
+                        turn_idx = int(turn_parts[-1])
+                        if 0 <= turn_idx < len(combined_messages):
+                            # Get up to 3 preceding turns as context
+                            start_idx = max(0, turn_idx - 3)
+                            context_turns = combined_messages[start_idx:turn_idx]
+                            # Create ContextUtterance objects
+                            unit.context = [ContextUtterance(speaker=m["speaker"], text=m["text"]) 
+                                          for m in context_turns]
+                        else:
+                            # If not found, set empty context
+                            unit.context = []
+                            logger.warning(f"Could not find original turn {turn_idx} for context")
+                    else:
+                        # If ID format doesn't match expected pattern, set empty context
+                        unit.context = []
+                        logger.warning(f"Could not parse turn index from utterance ID {original_utterance_id}")
+                
+                # Run analysis on remaining turns
+                remaining_analysis = await run_analysis_batch(preprocessed)
+                
+                # Add to accumulated results
+                all_results = analysis_results.setdefault(conversation_id, [])
+                all_results.extend(remaining_analysis)
+                logger.info(f"Processed {len(combined_messages)} combined turns for conversation {conversation_id}")
+                
+                # Reset the turns for this conversation
+                conversation_turns[conversation_id] = []
+    else:
+        # Process any remaining messages in the conversation using fixed-size batching
+        conv = conversations.get(conversation_id, [])
+        remaining = len(conv) % BATCH_SIZE
         
-        # DEBUG LOGGING: Log the remaining messages being processed
-        logger.info(f"[DEBUG] Remaining messages to process:")
-        for i, message in enumerate(batch_msgs):
-            logger.info(f"[DEBUG] Remaining message {i+1}: speaker={message['speaker']}, text={message['text'][:30]}...")
-        
-        input_utterances = [InputUtterance(**{
-            "id": m["user_id"] + "-" + str(idx),
-            "speaker": m["speaker"],
-            "text": m["text"],
-            "timestamp": m.get("timestamp")
-        }) for idx, m in enumerate(batch_msgs)]
-        
-        logger.info(f"[DEBUG] Created {len(input_utterances)} InputUtterance objects for final analysis")
-        
-        # Run preprocessing and analysis with timing
-        start_time = time.time()
-        preprocessed = run_preprocessing_batch(input_utterances)
-        
-        # Add context to each preprocessed utterance (similar to main.py)
-        for unit in preprocessed:
-            original_utterance_id = unit.original_utterance_id
-            # Find the original utterance in the conversation
-            for i, message in enumerate(conv):
-                # Check if this is the message that generated this AS unit
-                # The ID format is user_id-index_in_remaining
-                msg_idx_in_batch = int(original_utterance_id.split('-')[-1])
-                batch_start_idx = len(conv) - remaining
-                if i == batch_start_idx + msg_idx_in_batch and message["user_id"] in original_utterance_id:
-                    # Get up to 3 preceding messages as context
-                    start_idx = max(0, i - 3)
-                    context_messages = conv[start_idx:i]
-                    # Create ContextUtterance objects
-                    unit.context = [ContextUtterance(speaker=m["speaker"], text=m["text"]) 
-                                   for m in context_messages]
-                    break
-            else:
-                # If not found, set empty context
-                unit.context = []
-                logger.warning(f"Could not find original utterance {original_utterance_id} for context")
-        
-        batch_analysis = await run_analysis_batch(preprocessed)
-        analysis_time = time.time() - start_time
-        
-        # Accumulate final batch analysis results
-        all_results = analysis_results.setdefault(conversation_id, [])
-        all_results.extend(batch_analysis)
-        final_batch_results = [ar.dict() if hasattr(ar, 'dict') else ar for ar in batch_analysis]
-        logger.info(f"Final batch analyzed for conversation {conversation_id}, batch_id={batch_id}, time={analysis_time:.2f}s")
+        if remaining > 0:
+            logger.info(f"Processing {remaining} remaining messages for conversation {conversation_id}")
+            
+            # Prepare InputUtterance objects for the remaining messages
+            batch_msgs = conv[-remaining:]
+            input_utterances = [InputUtterance(**{
+                "id": m["user_id"] + "-" + str(idx),
+                "speaker": m["speaker"],
+                "text": m["text"],
+                "timestamp": m.get("timestamp")
+            }) for idx, m in enumerate(batch_msgs)]
+            
+            # Run preprocessing and analysis
+            preprocessed = run_preprocessing_batch(input_utterances)
+            
+            # Add context to each preprocessed utterance
+            for unit in preprocessed:
+                original_utterance_id = unit.original_utterance_id
+                # Find the original utterance in the conversation
+                for i, message in enumerate(conv):
+                    # Check if this is the message that generated this AS unit
+                    msg_idx_in_batch = int(original_utterance_id.split('-')[-1])
+                    batch_start_idx = len(conv) - remaining
+                    if i == batch_start_idx + msg_idx_in_batch and message["user_id"] in original_utterance_id:
+                        # Get up to 3 preceding messages as context
+                        start_idx = max(0, i - 3)
+                        context_messages = conv[start_idx:i]
+                        # Create ContextUtterance objects
+                        unit.context = [ContextUtterance(speaker=m["speaker"], text=m["text"]) 
+                                       for m in context_messages]
+                        break
+                else:
+                    # If not found, set empty context
+                    unit.context = []
+                    logger.warning(f"Could not find original utterance {original_utterance_id} for context")
+            
+            # Run analysis on remaining messages
+            remaining_analysis = await run_analysis_batch(preprocessed)
+            
+            # Add to accumulated results
+            all_results = analysis_results.setdefault(conversation_id, [])
+            all_results.extend(remaining_analysis)
+            logger.info(f"Processed {remaining} remaining messages for conversation {conversation_id}")
+    
     # Gather all analysis results for clustering
     all_analyzed = analysis_results.get(conversation_id, [])
     
@@ -461,9 +659,12 @@ async def end_conversation(conversation_id: str, background_tasks: BackgroundTas
     conversations.pop(conversation_id, None)
     analysis_results.pop(conversation_id, None)
     
+    # Generate a batch ID for the final response
+    final_batch_id = str(uuid.uuid4())
+    
     return {
         "status": "conversation_ended",
-        "batch_id": batch_id,
+        "batch_id": final_batch_id,
         "final_analysis_results": final_batch_results,
         "clustering_result": clustering_result
     }
