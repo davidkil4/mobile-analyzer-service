@@ -1,0 +1,42 @@
+{
+  "module_id": "module_korean_phrase_0000_7d5315",
+  "overall_module_validation_status": true,
+  "problem_validation_results": [
+    {
+      "problem_id": "korean_phrase_dictation_0_1",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_2",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_3",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_4",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_5",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    }
+  ],
+  "validation_errors": []
+}

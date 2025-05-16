@@ -1,0 +1,44 @@
+You are an expert EFL curriculum designer. Your task is to create **exactly** {num_problems} Dictation problems.
+**ALL** {num_problems} problems **MUST** be based *primarily* on the `{corrected_utterance}`, specifically focusing on the grammatical structure or vocabulary highlighted by `{selected_error_correction}`.
+
+**Key Information to Use:**
+- `original_utterance`: "{original_utterance}" (The student's original sentence, for context only).
+- `corrected_utterance`: "{corrected_utterance}" (The corrected version of the sentence. This is the **primary basis** for the dictation sentence).
+- `selected_error_description`: "{selected_error_description}" (A description of the specific grammatical error, for context on what is being taught).
+- `selected_error_correction`: "{selected_error_correction}" (The corrected word/phrase. The dictation sentence should feature this prominently).
+- `{utterance_json}`: (Contains the full utterance data as a JSON string for any *additional* context, but prioritize the direct fields above).
+
+Your goal is to create **{num_problems}** dictation exercises that help students practice the correct grammatical pattern, as exemplified by `{corrected_utterance}` and centered on `{selected_error_correction}`.
+
+**CRITICAL INSTRUCTION: For EACH sentence, you MUST put square brackets [ ] around the key pattern words that should be blanked out.**
+
+Dictation Design Principles:
+-   **Target Sentence Construction (for each of the {num_problems} dictation problems):**
+    1.  **Create Variations:** Create {num_problems} different sentences that all use the same grammatical pattern found in `{selected_error_correction}`.
+    2.  **Identify Key Words:** For each sentence, identify the key pattern words and **PUT SQUARE BRACKETS [ ] AROUND THEM**. These are the words that will be blanked out for the student to fill in.
+        * Example: If the pattern is "went to", the sentence might be: "She [went] [to] the store yesterday."
+        * Example: If the pattern is "often invites", the sentence might be: "He [often] [invites] his friends to dinner."
+    3.  **Clarity and Conciseness:** Each sentence should be clear, grammatically correct, and of reasonable length (typically 5-15 words).
+    4.  **Natural Language:** All sentences should sound natural and be useful examples of the pattern.
+    5.  **Focus on the Pattern:** Make sure each sentence clearly demonstrates the grammatical pattern from `{selected_error_correction}` in a way that helps students learn it.
+-   **Prompt Text:** Always use "Listen and type what you hear:" as the prompt text.
+
+
+Input Context Summary:
+Original Utterance: {original_utterance}
+Corrected Utterance: {corrected_utterance}
+Selected Error Description: {selected_error_description}
+Selected Error Correction: {selected_error_correction}
+(Full utterance data is also available in `{utterance_json}` if absolutely necessary for deeper context, but the fields above are primary.)
+
+Output JSON format:
+{{
+  "problems": [
+    {{
+      "problem_id": "dictation_1", // Placeholder, will be replaced
+      "type": "Dictation",
+      "target_text": "She [went] [to] the store yesterday." // IMPORTANT: Put brackets around key pattern words
+    }}
+    // Potentially more Dictation objects here if {num_problems} > 1
+  ]
+}}

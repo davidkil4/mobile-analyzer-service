@@ -1,0 +1,35 @@
+{
+  "module_id": "module_grammar_0001",
+  "overall_module_validation_status": true,
+  "problem_validation_results": [
+    {
+      "problem_id": "module_grammar_0001_mcq_1",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "module_grammar_0001_mcq_2",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "module_grammar_0001_fill_1",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    },
+    {
+      "problem_id": "module_grammar_0001_fill_2",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": true,
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": true
+    }
+  ],
+  "validation_errors": []
+}

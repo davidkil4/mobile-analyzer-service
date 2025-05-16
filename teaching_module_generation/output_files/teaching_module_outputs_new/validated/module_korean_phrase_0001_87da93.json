@@ -1,0 +1,90 @@
+{
+  "module_id": "module_korean_phrase_0001_87da93",
+  "module_type": "CONVERSATIONAL_LOW",
+  "source_utterance_info": {
+    "original": "몇시에 갈래?",
+    "corrected": "What time are you going?",
+    "context": [
+      {
+        "speaker": "student",
+        "text": "Do you want to go to pc방?"
+      },
+      {
+        "speaker": "student",
+        "text": "We can play r6."
+      },
+      {
+        "speaker": "interviewer",
+        "text": "오 좋아"
+      }
+    ],
+    "focus_type": "KOREAN_PHRASE",
+    "reason": "The utterance uses a Korean phrase to ask for information. The English correction uses the frame 'What time are you [verb]ing?'.",
+    "selected_error": {
+      "type": "Frame",
+      "severity": "critical",
+      "description": "Used Korean phrase for asking for information instead of English frame.",
+      "correction": "What time are you [verb]ing?"
+    },
+    "utterance_index_in_file": 1,
+    "source_file_type": "korean_phrase"
+  },
+  "explanations": {
+    "introduction": "You used the Korean phrase \"몇시에 갈래?\" which translates to \"What time are you going?\" in English.  This was in response to your friend suggesting going to a PC bang to play Rainbow Six.",
+    "main": "The phrase \"몇시에 갈래?\" uses a Korean sentence structure.  English uses a different structure to ask about time. The English equivalent is better expressed using the pattern: \"What time are you [verb]ing?\"  For example, \"What time are you leaving?\" or \"What time are you playing?\" are more natural-sounding in English. This is important because directly translating the Korean structure doesn't always work well in English.",
+    "recap": "To improve your English fluency, practice using the \"What time are you [verb]ing?\" pattern. This will help you to sound more natural when asking about the time of an event."
+  },
+  "problems": [
+    {
+      "problem_id": "korean_phrase_dictation_1_1",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "What time are you ____?",
+      "target_text": "What time are you leaving?"
+    },
+    {
+      "problem_id": "korean_phrase_dictation_1_2",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "What time are you ____ dinner?",
+      "target_text": "What time are you eating dinner?"
+    },
+    {
+      "problem_id": "korean_phrase_dictation_1_3",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "What time are you ____ at the airport?",
+      "target_text": "What time are you arriving at the airport?"
+    },
+    {
+      "problem_id": "korean_phrase_dictation_1_4",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "What time are you ____ your work?",
+      "target_text": "What time are you finishing your work?"
+    },
+    {
+      "problem_id": "korean_phrase_dictation_1_5",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "What time are you ____ the meeting?",
+      "target_text": "What time are you starting the meeting?"
+    }
+  ],
+  "help_context": "Focuses on Frame: Used Korean phrase for asking for information instead of English frame.. Reasoning: The utterance uses a Korean phrase to ask for information. The English correction uses the frame 'What time are you [verb]ing?'."
+}

@@ -1,0 +1,42 @@
+{
+  "module_id": "module_grammar_0001",
+  "overall_module_validation_status": false,
+  "problem_validation_results": [
+    {
+      "problem_id": "mcq_module_grammar_0001_01",
+      "step1_error_analysis_passes": false,
+      "step1_justification": "The original utterance contains multiple errors, including unnecessary words, incorrect word order and lack of articles.  The 'selected_error' is 'None', indicating no specific error was chosen, making it impossible to evaluate whether the problem addresses the selected error.",
+      "step2_problem_relevance_passes": false,
+      "step2_justification": "Because no error was selected in step1, it's impossible to determine if the problem is relevant. The problem focuses on the correct use of articles with singular countable nouns, which is a valid grammar point, but its relevance to the student's original error is undefined due to the lack of a selected error.",
+      "step3_problem_quality_passes": true,
+      "step3_justification": "The problem is well-structured, the question is clear, options are plausible distractors, and feedback is accurate and helpful. The difficulty is appropriate for learners making basic article usage errors.",
+      "overall_problem_validation_passes": false
+    },
+    {
+      "problem_id": "mcq_module_grammar_0001_02",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": false,
+      "step2_justification": "The selected error is 'None', indicating no specific grammatical error was identified in the student's utterance.  The problem focuses on article usage, which is a different grammatical concept.",
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": false
+    },
+    {
+      "problem_id": "fillblankchoice_module_grammar_0001_01",
+      "step1_error_analysis_passes": false,
+      "step1_justification": "The student's error is not about articles.  The student's error is related to sentence structure and word order in forming a question. The student included multiple introductory phrases ('ma may I can I').  The selected error category and description are inaccurate and irrelevant.",
+      "step2_problem_relevance_passes": false,
+      "step2_justification": "The problem does not address the student's actual error. The problem focuses on the use of indefinite articles, which is a different grammatical concept.",
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": false
+    },
+    {
+      "problem_id": "fillblankchoice_module_grammar_0001_02",
+      "step1_error_analysis_passes": true,
+      "step2_problem_relevance_passes": false,
+      "step2_justification": "The selected error is 'None', indicating no specific grammatical error was identified in the student's utterance.  The problem focuses on article usage, which is a different grammatical concept.  There's no direct connection between the student's error and the problem's target.",
+      "step3_problem_quality_passes": true,
+      "overall_problem_validation_passes": false
+    }
+  ],
+  "validation_errors": []
+}

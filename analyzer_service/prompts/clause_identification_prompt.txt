@@ -1,0 +1,106 @@
+# Clause Identification Task
+
+## Primary Task
+Identify and extract the individual clauses from the provided English AS unit text. Your goal is to segment the text into its constituent clauses, classifying each segment.
+
+## Clause Definition and Classification
+- A clause typically contains a subject and a verb (finite or non-finite).
+- **Crucially, fragments (e.g., "very good", "maybe twenty years") MUST be treated as single, complete clauses.**
+- **Coordinated Verb Phrases:** If multiple verb phrases share the SAME subject and are joined by 'and', 'but', or 'or', they belong to a SINGLE clause. Example: "I went to the store and bought milk" is ONE clause.
+- **Coordinate Clauses:** If clauses joined by 'and', 'but', or 'or' have DIFFERENT subjects, they are SEPARATE clauses. Include the conjunction with the second (or subsequent) clause. Example: "I like pizza and she prefers pasta" -> Clause 1: "I like pizza", Clause 2: "and she prefers pasta".
+- Every AS unit text provided MUST yield at least one clause object in the output list.
+
+## CRITICAL REQUIREMENTS
+- Output ONLY a valid JSON list of objects.
+- Each object in the list MUST represent a single identified clause and contain the following key:
+    - `clause_text` (string): The exact text of the clause, preserving original wording, punctuation, and capitalization.
+- Do NOT include any text outside the JSON list.
+- Preserve the original wording, punctuation, and capitalization of the clauses exactly as found in the input text.
+- Do NOT add extra formatting like markdown backticks (```json) around the JSON output.
+
+## EXAMPLES
+
+### Input AS Unit Text:
+{as_unit_text}
+
+### Example 1: Simple Clause
+Input: "I want to study crop protection"
+Output:
+[
+  {{
+    "clause_text": "I want to study crop protection"
+  }}
+]
+
+### Example 2: Coordinate Clauses (Different Subjects)
+Input: "I like pizza and she prefers pasta"
+Output:
+[
+  {{
+    "clause_text": "I like pizza"
+  }},
+  {{
+    "clause_text": "and she prefers pasta"
+  }}
+]
+
+### Example 3: Coordinated Verb Phrases (Same Subject)
+Input: "I went to the store and bought milk"
+Output:
+[
+  {{
+    "clause_text": "I went to the store and bought milk"
+  }}
+]
+
+### Example 4: Subordinate Clause
+Input: "When I arrived home, I saw the door was open"
+Output:
+[
+  {{
+    "clause_text": "When I arrived home"
+  }},
+  {{
+    "clause_text": "I saw the door was open"
+  }}
+]
+
+### Example 5: Fragment
+Input: "maybe twenty years"
+Output:
+[
+  {{
+    "clause_text": "maybe twenty years"
+  }}
+]
+
+### Example 6: Multiple Clauses
+Input: "Oh children are playing ball, and a man is running on the street."
+Output:
+[
+  {{
+    "clause_text": "Oh children are playing ball"
+  }},
+  {{
+    "clause_text": "and a man is running on the street."
+  }}
+]
+
+### Example 7: Mixed Language
+Input: "Yes, 안녕하세요"
+Output:
+[
+  {{
+    "clause_text": "Yes"
+  }},
+  {{
+    "clause_text": "안녕하세요"
+  }}
+]
+
+---
+
+## INPUT:
+{as_unit_text}
+
+## Your Output (JSON list of objects ONLY):

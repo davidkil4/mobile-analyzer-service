@@ -1,0 +1,148 @@
+{
+  "module_id": "module_grammar_0000_b04e23",
+  "module_type": "CONVERSATIONAL_LOW",
+  "source_utterance_info": {
+    "original": "I want play games",
+    "corrected": "I want to play games.",
+    "context": [
+      {
+        "speaker": "student",
+        "text": "I’m boring"
+      },
+      {
+        "speaker": "student",
+        "text": "Do you want play?"
+      },
+      {
+        "speaker": "interviewer",
+        "text": "sure. what do you want to do?"
+      }
+    ],
+    "focus_type": "GRAMMAR",
+    "reason": "The correction adds the infinitive marker 'to' before the verb 'play', which is a grammar correction.",
+    "selected_error": {
+      "type": "Article/Preposition/Determiner/Quantifier",
+      "severity": "moderate",
+      "description": "Missing infinitive marker 'to'",
+      "correction": "to play"
+    },
+    "utterance_index_in_file": 0,
+    "source_file_type": "grammar"
+  },
+  "explanations": {
+    "introduction": "In your sentence, \"I want play games\", let's look at how we can make it even clearer.  Notice that you said \"Do you want play?\" earlier; we'll focus on the missing word before \"play.\"",
+    "main": "Many verbs in English need the word \"to\" before them when they follow words like \"want,\" \"need,\" or \"plan.\"  This \"to\" is called the infinitive marker.  It shows that the verb is not acting alone but as part of a larger phrase.  So, instead of \"I want play games,\" we say \"I want to play games.\"  Other examples are: \"I plan to travel,\" and \"She needs to study.\"",
+    "recap": "Remember to add \"to\" before the verb when it follows words like \"want.\"  The correct sentence is: \"I want to play games.\" You're doing great!"
+  },
+  "problems": [
+    {
+      "problem_id": "grammar_mcq_0_1",
+      "type": "MCQ",
+      "question": "Complete the sentence correctly: I want ______.",
+      "question_template": null,
+      "options": [
+        "play games",
+        "to playing games",
+        "to play games",
+        "playing games"
+      ],
+      "feedback": [
+        {
+          "option_text": "play games",
+          "is_correct": false,
+          "explanation": "Incorrect. This is missing the infinitive marker 'to' before the verb 'play'.  The correct form requires 'to' to show the purpose or intention."
+        },
+        {
+          "option_text": "to playing games",
+          "is_correct": false,
+          "explanation": "Incorrect. While 'to' is included,  'playing' is incorrect here. The infinitive form of the verb 'play' is needed, which is simply 'to play'."
+        },
+        {
+          "option_text": "to play games",
+          "is_correct": true,
+          "explanation": "Correct! This sentence correctly uses the infinitive marker 'to' before the verb 'play', addressing the missing infinitive marker error."
+        },
+        {
+          "option_text": "playing games",
+          "is_correct": false,
+          "explanation": "Incorrect. This is missing the infinitive marker 'to'.  The sentence requires the infinitive 'to play' to express the intended meaning."
+        }
+      ],
+      "prompt_text": null,
+      "target_text": null
+    },
+    {
+      "problem_id": "grammar_mcq_0_2",
+      "type": "MCQ",
+      "question": "Choose the sentence that correctly uses the infinitive marker 'to':",
+      "question_template": null,
+      "options": [
+        "She needs learn more.",
+        "She needs to learning more.",
+        "She needs to learn more.",
+        "She needs learning more."
+      ],
+      "feedback": [
+        {
+          "option_text": "She needs learn more.",
+          "is_correct": false,
+          "explanation": "Incorrect. This sentence is missing the infinitive marker 'to' before the verb 'learn', which is necessary to show the purpose of 'needs'."
+        },
+        {
+          "option_text": "She needs to learning more.",
+          "is_correct": false,
+          "explanation": "Incorrect.  Although 'to' is present, 'learning' is incorrect. The base form of the verb is required after 'to'."
+        },
+        {
+          "option_text": "She needs to learn more.",
+          "is_correct": true,
+          "explanation": "Correct! This sentence correctly uses the infinitive marker 'to' before the verb 'learn', showing the intended action."
+        },
+        {
+          "option_text": "She needs learning more.",
+          "is_correct": false,
+          "explanation": "Incorrect. The infinitive marker 'to' is missing before the verb 'learn'."
+        }
+      ],
+      "prompt_text": null,
+      "target_text": null
+    },
+    {
+      "problem_id": "grammar_fill_blank_0_2",
+      "type": "FillBlankChoice",
+      "question": null,
+      "question_template": "He decided ____ learn a new language.",
+      "options": [
+        "to",
+        "learn",
+        "to learn",
+        "learning"
+      ],
+      "feedback": [
+        {
+          "option_text": "to",
+          "is_correct": false,
+          "explanation": "Incorrect.  While 'to' is part of the infinitive, it's missing the verb.  The error, 'Missing infinitive marker 'to', requires both 'to' and the verb to form the infinitive phrase."
+        },
+        {
+          "option_text": "learn",
+          "is_correct": false,
+          "explanation": "Incorrect. This is the base verb, but it lacks the infinitive marker 'to', which is the focus of the correction for 'Missing infinitive marker 'to'."
+        },
+        {
+          "option_text": "learning",
+          "is_correct": false,
+          "explanation": "Incorrect.  This is the present participle form of 'learn', not the infinitive form needed to correct 'Missing infinitive marker 'to'."
+        },
+        {
+          "option_text": "to learn",
+          "is_correct": true,
+          "explanation": "Correct! 'to learn' is the correct infinitive form, addressing the error 'Missing infinitive marker 'to'."
+        }
+      ],
+      "prompt_text": null,
+      "target_text": null
+    }
+  ],
+  "help_context": "Focuses on Article/Preposition/Determiner/Quantifier: Missing infinitive marker 'to'. Reasoning: The correction adds the infinitive marker 'to' before the verb 'play', which is a grammar correction."
+}

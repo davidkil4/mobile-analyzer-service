@@ -1,0 +1,90 @@
+{
+  "module_id": "module_korean_phrase_0000_7d5315",
+  "module_type": "CONVERSATIONAL_LOW",
+  "source_utterance_info": {
+    "original": "아무것도 안해",
+    "corrected": "I haven't been doing anything.",
+    "context": [
+      {
+        "speaker": "student",
+        "text": "How are you doing?"
+      },
+      {
+        "speaker": "interviewer",
+        "text": "im doing good."
+      },
+      {
+        "speaker": "interviewer",
+        "text": "how about you?"
+      }
+    ],
+    "focus_type": "KOREAN_PHRASE",
+    "reason": "The utterance uses a Korean phrase to describe an activity. The English correction uses the pattern 'I haven't been doing [activity]'.",
+    "selected_error": {
+      "type": "Pattern",
+      "severity": "critical",
+      "description": "Used Korean phrase for describing an activity instead of English pattern.",
+      "correction": "I haven't been doing [activity]"
+    },
+    "utterance_index_in_file": 0,
+    "source_file_type": "korean_phrase"
+  },
+  "explanations": {
+    "introduction": "You used the Korean phrase \"아무것도 안 해\", which translates to \"I haven't been doing anything.\" in English.  Your friend asked, \"How about you?\" after you heard \"How are you doing?\" and \"I'm doing good.\"",
+    "main": "The error lies in directly translating the Korean phrasing into English.  While \"아무것도 안 해\" is grammatically correct Korean, English uses a different structure to describe inactivity over a period.  The correct pattern is \"I haven't been doing [activity]\" or \"I haven't been doing anything.\"  This emphasizes the ongoing nature of the inactivity. For example:  \"I haven't been doing much exercise lately.\" or \"I haven't been doing anything fun this week.\"",
+    "recap": "Practice using the English pattern \"I haven't been doing [activity]\" to express a lack of activity. This will help you sound more natural in English conversations."
+  },
+  "problems": [
+    {
+      "problem_id": "korean_phrase_dictation_0_1",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "I ____ ____ ____ my homework lately.",
+      "target_text": "I haven't been doing my homework lately."
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_2",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "He ____ ____ ____ much exercise recently.",
+      "target_text": "He hasn't been doing much exercise recently."
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_3",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "They ____ ____ ____ very well in the competition.",
+      "target_text": "They haven't been doing very well in the competition."
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_4",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "We ____ ____ ____ anything interesting this week.",
+      "target_text": "We haven't been doing anything interesting this week."
+    },
+    {
+      "problem_id": "korean_phrase_dictation_0_5",
+      "type": "Dictation",
+      "question": null,
+      "question_template": null,
+      "options": null,
+      "feedback": null,
+      "prompt_text": "She ____ ____ ____ her best in class.",
+      "target_text": "She hasn't been doing her best in class."
+    }
+  ],
+  "help_context": "Focuses on Pattern: Used Korean phrase for describing an activity instead of English pattern.. Reasoning: The utterance uses a Korean phrase to describe an activity. The English correction uses the pattern 'I haven't been doing [activity]'."
+}

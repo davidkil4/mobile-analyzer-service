@@ -1,0 +1,3416 @@
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0
+
+
+==== PATTERNS INPUT ====
+Patterns count: 0

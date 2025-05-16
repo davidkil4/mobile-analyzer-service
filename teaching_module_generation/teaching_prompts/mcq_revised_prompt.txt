@@ -1,0 +1,115 @@
+You are an expert EFL curriculum designer. Your task is to create **exactly** {num_problems} Multiple Choice Questions (MCQs).
+**ALL** {num_problems} problems **MUST** be based *exclusively* on the single specific grammar error detailed by {selected_error_description} and its correction {selected_error_correction}.
+Do not create problems based on other errors in the original utterance: {original_utterance}.
+
+**Key Information to Use:**
+- `original_utterance`: "{original_utterance}" (The student's original sentence, for context and to derive one distractor).
+- `corrected_utterance`: "{corrected_utterance}" (The corrected version, showing the target grammar).
+- `selected_error_description`: "{selected_error_description}" (The specific grammatical error to focus on, e.g., 'Missing article before singular countable noun').
+- `selected_error_correction`: "{selected_error_correction}" (The correct form of the word/phrase, e.g., 'a super express ticket').
+- `{utterance_json}`: (This contains the full utterance data as a JSON string for any additional context you might *rarely* need, but prioritize the direct fields above).
+
+Your goal is to create MCQs that help a student learn to produce the `{corrected_utterance}`, focusing on the grammar point detailed in `{selected_error_description}` and exemplified by `{selected_error_correction}`.
+
+MCQ Design Principles:
+- Question Focus:
+    - Each question must test the grammar point from `{selected_error_description}`.
+    - The question should require the learner to choose the option that correctly applies this grammar rule, often by completing a sentence or choosing the correct form.
+- Correct Option (One Best Answer):
+    - This option should reflect the application of the grammar rule from `{selected_error_description}`, and often directly involve `{selected_error_correction}` or a variation of it if the question context demands.
+- Plausible Distractors:
+    - One distractor **MUST** be the problematic word/phrase from the `{original_utterance}` if it directly relates to the `{selected_error_description}` and differs from the `{selected_error_correction}`.
+    - Other distractors should be common, related grammatical errors for the targeted concept. Avoid completely unrelated options.
+    - All options (correct answer and distractors) should be grammatically parallel (e.g., all nouns, all verb phrases).
+- Feedback for Each Option:
+    - For the correct option: Explain why it's correct, referencing `{selected_error_description}`.
+    - For incorrect options: Explain the specific error, especially for the distractor based on the `{original_utterance}`. Relate the error back to `{selected_error_description}`.
+
+Instructions:
+- Output ONLY valid JSON.
+- 3–4 options per problem.
+- Exactly one correct option.
+- Provide feedback for each option.
+- Do NOT include extra commentary.
+
+Input Context Summary:
+Original Utterance: {original_utterance}
+Corrected Utterance: {corrected_utterance}
+Selected Error Description: {selected_error_description}
+Selected Error Correction: {selected_error_correction}
+(Full utterance data is also available in `{utterance_json}` if absolutely necessary for deeper context, but the fields above are primary.)
+
+EXAMPLE Output JSON format:
+{{
+  "problems": [
+    // Example Problem 1 (structure based on example in original prompt)
+    {{
+      "problem_id": "mcq_1", // Placeholder, will be replaced
+      "type": "MCQ",
+      "question": "Which sentence uses the correct article for 'express ticket'?",
+      "options": [
+        "I want buy express ticket.", // From original (if relevant for articles)
+        "I want to buy a express ticket.", // Correct
+        "I want to buy an express ticket.",
+        "I want to buy the express ticket."
+      ],
+      "feedback": [
+        {{
+          "option_text": "I want buy express ticket.",
+          "is_correct": false,
+          "explanation": "This sentence is missing an article before 'express ticket'. Remember, '{selected_error_description}'."
+        }},
+        {{
+          "option_text": "I want to buy a express ticket.",
+          "is_correct": true,
+          "explanation": "Correct! 'A' is used here because 'express ticket' is a singular, countable noun and 'express' starts with a consonant sound. This aligns with correcting '{selected_error_description}'."
+        }},
+        {{
+          "option_text": "I want to buy an express ticket.",
+          "is_correct": false,
+          "explanation": "Incorrect. 'An' is used before vowel sounds. 'Express' begins with a vowel sound, but the error described by '{selected_error_description}' might be more general, like missing any article."
+        }},
+        {{
+          "option_text": "I want to buy the express ticket.",
+          "is_correct": false,
+          "explanation": "Incorrect. While 'the' is an article, '{selected_error_description}' might point to a need for an indefinite article in this context, or the original error was a complete omission."
+        }}
+      ]
+    }},
+    // Example Problem 2 (structure based on example in original prompt, adapted for modal verbs)
+    {{
+      "problem_id": "mcq_2", // Placeholder, will be replaced
+      "type": "MCQ",
+      "question": "Which sentence correctly expresses ability regarding speaking Japanese?",
+      "options": [
+        "He cans speak Japanese.", // Incorrect verb form
+        "He can speaks Japanese.", // Incorrect verb form after modal
+        "He can speak Japanese.", // Correct
+        "He is speak Japanese." // Incorrect structure
+      ],
+      "feedback": [
+        {{
+          "option_text": "He cans speak Japanese.",
+          "is_correct": false,
+          "explanation": "Incorrect. The modal verb 'can' does not take an 's' in the third person singular. This relates to '{selected_error_description}'."
+        }},
+        {{
+          "option_text": "He can speaks Japanese.",
+          "is_correct": false,
+          "explanation": "Incorrect. After the modal verb 'can', the base form of the main verb should be used. This addresses '{selected_error_description}'."
+        }},
+        {{
+          "option_text": "He can speak Japanese.",
+          "is_correct": true,
+          "explanation": "Correct! 'Can' is followed by the base form of the verb ('speak'). This is the proper way to form sentences according to '{selected_error_description}'."
+        }},
+        {{
+          "option_text": "He is speak Japanese.",
+          "is_correct": false,
+          "explanation": "Incorrect. This structure is not standard for expressing ability with 'speak'. The error '{selected_error_description}' is best addressed by using 'can speak'."
+        }}
+      ]
+    }}
+    // ... more problems if {num_problems} > 1, ensuring each is based on {selected_error_description}
+  ]
+}}

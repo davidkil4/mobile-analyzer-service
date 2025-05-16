@@ -1,0 +1,40 @@
+langchain==0.2.6
+# langchain-core==0.1.52 # Let pip manage
+# langchain-text-splitters<0.3.0,>=0.2.0 # Let pip manage based on langchain
+langchain-google-genai
+langchain-community
+python-dotenv==1.0.1
+pydantic==2.7.1 # Revert to latest v2
+# pydantic-core==2.14.6 # Let pip manage
+
+# Clustering dependencies
+numpy==1.26.4
+scipy==1.13.0
+scikit-learn==1.4.2
+kneed==0.8.5
+matplotlib==3.8.4
+
+# Testing dependencies
+pytest==8.3.4
+pytest-asyncio==0.25.1
+pytest-cov==6.0.0
+pytest-mock==3.14.0 # Added for mocking
+
+langdetect
+
+# Stream Chat dependencies
+stream-chat==4.11.0  # Stream Chat Python SDK for token generation
+
+# FastAPI dependencies
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.9
+
+# JWT verification dependencies
+pyjwt==2.10.1
+cryptography==42.0.0  # Required for JWT RSA verification
+
+# Add specific versions if needed, e.g.:
+# langchain==0.1.16
+# langchain-google-genai==0.1.3
+# python-dotenv==1.0.1

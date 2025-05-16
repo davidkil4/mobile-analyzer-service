@@ -1,0 +1,39 @@
+{
+  "module_id": "module_vocab_0000_4aa6d0",
+  "module_type": "CONVERSATIONAL_LOW",
+  "source_utterance_info": {
+    "original": "Do you want play?",
+    "corrected": "Do you want to play?",
+    "context": [
+      {
+        "speaker": "interviewer",
+        "text": "how about you?"
+      },
+      {
+        "speaker": "student",
+        "text": "아무것도 안해"
+      },
+      {
+        "speaker": "student",
+        "text": "I’m boring"
+      }
+    ],
+    "focus_type": "SMALL_GRAMMAR",
+    "reason": "The correction involves adding the infinitive marker 'to', which is a minor grammatical correction.",
+    "selected_error": {
+      "type": "Article/Preposition/Determiner/Quantifier",
+      "severity": "moderate",
+      "description": "Missing infinitive marker 'to'",
+      "correction": "to play"
+    },
+    "utterance_index_in_file": 0,
+    "source_file_type": "vocab"
+  },
+  "explanations": {
+    "introduction": "In your sentence, \"Do you want play?\", let's look at how we can make it grammatically correct.  The part we're focusing on is the missing word before \"play\".",
+    "main": "After the verb \"want\", we usually use the infinitive form of another verb.  The infinitive form is the base form of the verb with \"to\" in front of it.  So, instead of \"play\", we use \"to play\".  For example, \"I want to eat\" and \"She wants to sleep\" are both correct.  Adding \"to\" before \"play\" makes the sentence grammatically correct.",
+    "recap": "Remember to add \"to\" before the verb after \"want\". The correct sentence is: \"Do you want to play?\" You're doing great!"
+  },
+  "problems": [],
+  "help_context": "Focuses on Article/Preposition/Determiner/Quantifier: Missing infinitive marker 'to'. Reasoning: The correction involves adding the infinitive marker 'to', which is a minor grammatical correction."
+}

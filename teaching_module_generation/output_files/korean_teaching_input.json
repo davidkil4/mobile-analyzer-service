@@ -1,0 +1,130 @@
+{
+  "metadata": {},
+  "analysis_zones": [
+    {
+      "zone_name": "ZPD+1",
+      "recommendations": [
+        {
+          "original": "아무것도 안해",
+          "corrected": "I haven't been doing anything.",
+          "priority_score": 0.513,
+          "metrics": {
+            "C": 0.3033,
+            "A": 0.7866,
+            "F": 0.0
+          },
+          "errors": [
+            {
+              "type": "Verb Tense/Aspect",
+              "severity": "moderate",
+              "description": "Use of simple past instead of present perfect continuous",
+              "correction": "haven't been doing"
+            }
+          ],
+          "clauses": [
+            {
+              "text": "I didn't do anything.",
+              "corrected_clause_text": "I haven't been doing anything.",
+              "errors": [
+                {
+                  "category": "Verb Tense/Aspect",
+                  "severity": "moderate",
+                  "error": "Use of simple past instead of present perfect continuous",
+                  "correction": "haven't been doing"
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "speaker": "student",
+              "text": "How are you doing?"
+            },
+            {
+              "speaker": "interviewer",
+              "text": "im doing good."
+            },
+            {
+              "speaker": "interviewer",
+              "text": "how about you?"
+            }
+          ],
+          "filtering_metadata": {
+            "decision": "KEEP",
+            "reason": "The correction accurately reflects the meaning of the original Korean sentence and addresses the tense issue."
+          },
+          "pattern_analysis": [
+            {
+              "intention": "Giving an answer to a question about one's activities",
+              "category": "Pattern",
+              "component": "I haven't been doing [activity]",
+              "frequency": 3.5,
+              "context": "Common response to 'How are you?', 'What have you been up to?' etc.",
+              "note": null
+            }
+          ]
+        },
+        {
+          "original": "몇시에 갈래?",
+          "corrected": "What time are you going?",
+          "priority_score": 0.513,
+          "metrics": {
+            "C": 0.3033,
+            "A": 0.7866,
+            "F": 0.0
+          },
+          "errors": [
+            {
+              "type": "Verb Tense/Aspect",
+              "severity": "moderate",
+              "description": "Incorrect future tense usage",
+              "correction": "are you going"
+            }
+          ],
+          "clauses": [
+            {
+              "text": "What time will you go?",
+              "corrected_clause_text": "What time are you going?",
+              "errors": [
+                {
+                  "category": "Verb Tense/Aspect",
+                  "severity": "moderate",
+                  "error": "Incorrect future tense usage",
+                  "correction": "are you going"
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "speaker": "student",
+              "text": "Do you want to go to pc방?"
+            },
+            {
+              "speaker": "student",
+              "text": "We can play r6."
+            },
+            {
+              "speaker": "interviewer",
+              "text": "오 좋아"
+            }
+          ],
+          "filtering_metadata": {
+            "decision": "KEEP",
+            "reason": "The correction provides a grammatically correct and natural English translation of the Korean sentence, addressing the tense issue."
+          },
+          "pattern_analysis": [
+            {
+              "intention": "Asking for information",
+              "category": "Frame",
+              "component": "What time are you [verb]ing?",
+              "frequency": 4.0,
+              "context": "Common way to ask about scheduled events.",
+              "note": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

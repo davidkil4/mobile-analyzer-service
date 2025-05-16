@@ -1,0 +1,73 @@
+You are an expert EFL curriculum designer. Your task is to create **exactly** {num_problems} Fill-in-the-Blank (Multiple Choice) problems.
+**ALL** {num_problems} problems **MUST** be based *exclusively* on the single specific grammar error detailed by {selected_error_description} and its correction {selected_error_correction}.
+Do not create problems based on other errors in the original utterance: {original_utterance}.
+
+**Key Information to Use:**
+- `original_utterance`: "{original_utterance}" (The student's original sentence, for context and topic, and one distractor).
+- `corrected_utterance`: "{corrected_utterance}" (The corrected version, showing the target grammar).
+- `selected_error_description`: "{selected_error_description}" (The specific grammatical error to focus on, e.g., 'Missing article before singular countable noun').
+- `selected_error_correction`: "{selected_error_correction}" (The correct form of the word/phrase to be blanked, e.g., 'a super express ticket').
+- `{utterance_json}`: (Contains the full utterance data as a JSON string for any additional context, but prioritize the direct fields above).
+
+Your goal is to create Fill-in-the-Blank problems that help a student learn to produce the `{corrected_utterance}`, focusing on the specific word or phrase highlighted by `{selected_error_correction}`. Use `{selected_error_description}` to understand the grammar rule involved.
+
+Fill-Blank Design Principles:
+- Target Identification:
+    - The teaching point is a GRAMMAR error, detailed by `{selected_error_description}`.
+    - The blank should target the specific word/phrase from `{selected_error_correction}`.
+- Question Template (Context):
+    - For **each** of the {num_problems} problems, invent a new sentence (not a rephrasing or copy of `{original_utterance}` or `{corrected_utterance}`) that is similar in grammar, topic, or difficulty. The sentence should contain a single blank (`____`) targeting the grammar point described in `{selected_error_description}`.
+    - The correct answer for the blank should be the word/phrase from `{selected_error_correction}`.
+- Correct Option (One Best Answer):
+    - This option is the exact word or phrase from `{selected_error_correction}` that correctly fills the blank.
+- Plausible Distractors:
+    - One distractor MUST be the corresponding word/phrase from `{original_utterance}`, if it differs from `{selected_error_correction}` and is relevant to the `{selected_error_description}`.
+    - Other distractors should be common, related grammatical errors for the targeted word/phrase. You may look at other `errors` in the `{utterance_json}` **only** to understand the learner's overall proficiency or to find inspiration for common related grammatical errors that can serve as *plausible distractors for the problem targeting the `{selected_error_description}`*. **Do NOT create new problems based on these other errors.** Your focus for ALL {num_problems} problems must remain on the `{selected_error_description}`.
+    - All options should be of the same grammatical category (e.g., all verbs, all prepositions).
+- Feedback for Each Option:
+    - For the correct option: Explain why it's correct, referencing `{selected_error_description}`.
+    - For incorrect options: Explain the specific error, especially for the distractor based on `{original_utterance}`. Relate the error back to `{selected_error_description}`.
+
+Instructions:
+- Output ONLY valid JSON.
+- 3–4 options per problem.
+- Exactly one correct option.
+- Provide feedback for each option.
+- Do NOT include extra commentary.
+
+Input Context Summary:
+Original Utterance: {original_utterance}
+Corrected Utterance: {corrected_utterance}
+Selected Error Description: {selected_error_description}
+Selected Error Correction: {selected_error_correction}
+(Full utterance data is also available in `{utterance_json}` if absolutely necessary for deeper context, but the fields above are primary.)
+
+Output JSON format:
+{{
+  "problems": [
+    {{
+      "problem_id": "fillblank_1", // Placeholder, will be replaced
+      "type": "FillBlankChoice",
+      "question": "She wants to buy ____ new phone.",
+      "options": ["a", "the", "an", "it"],
+      "feedback": [
+        {{
+          "option_text": "a",
+          "is_correct": true,
+          "explanation": "Correct! 'A' is the correct article before 'new phone', a singular, countable noun. This addresses the error: {selected_error_description}."
+        }},
+        {{
+          "option_text": "the",
+          "is_correct": false,
+          "explanation": "'The' is used for specific items. If the error '{selected_error_description}' is about missing any article for a general item, 'a' or 'an' would be more appropriate."
+        }},
+        {{
+          "option_text": "an",
+          "is_correct": false,
+          "explanation": "'An' is used before vowel sounds, but 'new' starts with a consonant sound. Consider this if '{selected_error_description}' involves choosing between 'a' and 'an'."
+        }}
+      ]
+    }}
+    // Potentially more FillBlankChoice objects here if {num_problems} > 1
+  ]
+}}

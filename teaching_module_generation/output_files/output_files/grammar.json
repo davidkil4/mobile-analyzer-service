@@ -1,0 +1,79 @@
+{
+  "metadata": {},
+  "analysis_zones": [
+    {
+      "zone_name": "ZPD-1",
+      "recommendations": [
+        {
+          "original": "I want play games",
+          "corrected": "I want to play games.",
+          "priority_score": 0.513,
+          "metrics": {
+            "C": 0.1983,
+            "A": 0.7866,
+            "F": 0.0
+          },
+          "errors": [
+            {
+              "type": "Article/Preposition/Determiner/Quantifier",
+              "severity": "moderate",
+              "description": "Missing infinitive marker 'to'",
+              "correction": "to play"
+            }
+          ],
+          "clauses": [
+            {
+              "text": "I want play games",
+              "corrected_clause_text": "I want to play games.",
+              "errors": [
+                {
+                  "category": "Article/Preposition/Determiner/Quantifier",
+                  "severity": "moderate",
+                  "error": "Missing infinitive marker 'to'",
+                  "correction": "to play"
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "speaker": "student",
+              "text": "I’m boring"
+            },
+            {
+              "speaker": "student",
+              "text": "Do you want play?"
+            },
+            {
+              "speaker": "interviewer",
+              "text": "sure. what do you want to do?"
+            }
+          ],
+          "filtering_metadata": {
+            "decision": "KEEP",
+            "reason": "The correction accurately inserts the necessary infinitive marker 'to', improving grammatical correctness."
+          },
+          "pattern_analysis": [
+            {
+              "intention": "Expressing desire",
+              "category": "Pattern",
+              "component": "I want to [verb]",
+              "frequency": 4.0,
+              "context": "Common in expressing personal wants and intentions.",
+              "note": null
+            }
+          ],
+          "focus_type": "GRAMMAR",
+          "reason": "The correction adds the infinitive marker 'to' before the verb 'play', which is a grammar correction.",
+          "selected_error": {
+            "type": "Article/Preposition/Determiner/Quantifier",
+            "severity": "moderate",
+            "description": "Missing infinitive marker 'to'",
+            "correction": "to play"
+          },
+          "utterance_index": 0
+        }
+      ]
+    }
+  ]
+}

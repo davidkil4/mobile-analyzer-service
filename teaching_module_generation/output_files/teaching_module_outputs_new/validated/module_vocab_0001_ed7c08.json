@@ -1,0 +1,39 @@
+{
+  "module_id": "module_vocab_0001_ed7c08",
+  "module_type": "CONVERSATIONAL_LOW",
+  "source_utterance_info": {
+    "original": "Do you want to go to pc방?",
+    "corrected": "Do you want to go to a PC bang?",
+    "context": [
+      {
+        "speaker": "student",
+        "text": "Do you want play?"
+      },
+      {
+        "speaker": "interviewer",
+        "text": "sure. what do you want to do?"
+      },
+      {
+        "speaker": "student",
+        "text": "I want play games"
+      }
+    ],
+    "focus_type": "SMALL_GRAMMAR",
+    "reason": "The correction adds the missing article 'a' before 'PC bang', which is a minor grammar correction.",
+    "selected_error": {
+      "type": "Article/Preposition/Determiner/Quantifier",
+      "severity": "minor",
+      "description": "Missing indefinite article before 'PC bang'",
+      "correction": "a PC bang"
+    },
+    "utterance_index_in_file": 1,
+    "source_file_type": "vocab"
+  },
+  "explanations": {
+    "introduction": "In your sentence, \"Do you want to go to pc방?\", let's focus on using articles correctly.  Notice that you're asking about going to a specific type of place.",
+    "main": "In English, we use indefinite articles (\"a\" or \"an\") before singular, countable nouns when we're not referring to a specific one.  \"PC bang\" is a singular, countable noun, meaning one place.  Adding \"a\" makes it clear you're talking about going to *a* PC bang, not a specific one.  For example, \"I visited a museum yesterday\" or \"She wants to open a coffee shop.\"  Your corrected sentence uses \"a\" correctly.",
+    "recap": "Remember to use \"a\" before singular, countable nouns like \"PC bang\" when you aren't referring to a specific one.  The correct sentence is: \"Do you want to go to a PC bang?\"  You're doing great!"
+  },
+  "problems": [],
+  "help_context": "Focuses on Article/Preposition/Determiner/Quantifier: Missing indefinite article before 'PC bang'. Reasoning: The correction adds the missing article 'a' before 'PC bang', which is a minor grammar correction."
+}

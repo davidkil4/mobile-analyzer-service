@@ -1,0 +1,127 @@
+# Clause Analysis Task (Foster et al., 2000)
+
+##Primary Task
+Analyze each AS-unit to identify and classify clauses.
+
+##CRITICAL REQUIREMENTS
+- EVERY utterance MUST have at least one clause, even if fragmentary or lacking a finite verb
+- Treat elliptical constructions (with implied subjects/verbs) as valid clauses
+- For fragments, identify the implied elements and mark them in implied_elements
+
+##Process
+
+1. Identify all clauses within each AS-unit
+2. Classify each clause as main, coordinate, subordinate, or non-finite
+3. For subordinate clauses, specify the subtype (adverbial, relative, complement, subject)
+4. Note any implied elements that are not explicitly stated
+
+##Guidelines for Analysis
+
+###Clause Types
+
+1. **Main Clause**
+   - Contains a subject and finite verb, can stand alone
+   - Fragments and elliptical constructions count as main clauses with implied elements
+   - Example: "I serves in a organization" → main clause
+   - Example: "maybe twenty years" → main clause with implied elements ["it is", "it has been"]
+
+2. **Coordinate Clause**
+   - Joined to a main clause with coordinating conjunction (and, but, or)
+   - Must have its own subject to be considered a separate clause
+   - Could function independently if separated
+   - Example: "I like pizza and she prefers pasta" → main + coordinate
+
+3. **Subordinate Clause**
+   - Depends on a main clause, introduced by a subordinating conjunction
+   - Types:
+     - **Adverbial**: "when I was in university, I specialized"
+     - **Relative/Phrasal Post-modifier**: "I serve in an organization which is called department"
+     - **Complement**: "I think that he knows nothing"
+     - **Subject**: "That he knows nothing creates problems"
+
+4. **Non-finite Clause **
+   - Contains a non-finite verb form (infinitive, gerund, participle)
+   - Must have at least one additional clause element beyond the verb
+   - Example: "I want to study crop protection" → "to study crop protection" is non-finite
+
+
+
+### Special Cases
+
+1. **Fragments and Ellipsis**
+   - Treat as main clauses with implied elements
+   - Example: "very good" → main clause with implied ["it is", "that is"]
+   - Example: "near here" → main clause with implied ["it is", "I am"]
+
+2. **Coordinated Verb Phrases**
+   - Count as single clause when sharing the same subject
+   - Example: "I went to store and bought milk" → single main clause
+   - Only count as separate clauses when each has its own subject
+
+
+### Conjunction Treatment
+
+In coordinate clauses, separate the conjunction from the clause proper
+Example: "I like pizza and she prefers pasta" → "I like pizza" + "she prefers pasta" with "and" as coordinator
+
+
+
+### Complex Examples
+
+1. **Nested Subordinate Clauses**
+   - Example: "I believe that he said that they were coming"
+   - Main clause: "I believe"
+   - First-level complement clause: "that he said"
+   - Second-level complement clause: "that they were coming"
+
+2. **Multiple Clause Types**
+   - Example: "When I arrived home, I saw that the door was open and someone had been inside"
+   - Adverbial clause: "When I arrived home"
+   - Main clause: "I saw"
+   - Complement clause: "that the door was open"
+   - Coordinate clause: "someone had been inside" (coordinator: "and")
+
+### Error Handling for Ambiguous Cases
+
+1. **Unclear Boundaries**
+   - When clause boundaries are ambiguous, favor the interpretation that produces the most grammatically complete clauses
+2. **Fragmentary Speech**
+   - For extremely fragmented utterances, identify the minimal implied elements needed to form a coherent clause
+3. **Repetitions/Corrections**
+   - Consider self-corrections as part of the original clause unless they form a complete new clause
+4. **Interrupted Clauses**
+   - Mark as incomplete but still classify according to their intended structure
+
+### Verification Criteria
+
+1. **Clause Completeness**
+   - Each identified clause must contain or imply a subject and verb
+2. **Dependency Check**
+   - Ensure subordinate clauses are properly attached to a main clause
+3. **Coordination Test**
+   - For coordinate clauses, verify each could stand as an independent sentence
+4. **Cross-Validation**
+   - Check that the total number of clauses matches the complexity of the utterance
+5. **Element Coverage**
+   - Ensure every word in the utterance is assigned to some clause
+
+## Input Format Description
+{input_format}
+
+## AS Unit to Analyze
+{input_as_units}
+
+## Required Output Format
+CRITICAL: You MUST output ONLY the JSON object described below. Do NOT include ANY explanatory text, greetings, apologies, or markdown formatting (like ```json) before or after the JSON object.
+
+{output_format}
+
+Example JSON Output for "I like pizza and she prefers pasta":
+```json
+{{
+  "clauses": [
+    {{"clause_text": "I like pizza"}},
+    {{"clause_text": "and she prefers pasta"}}
+  ]
+}}
+```

@@ -1,0 +1,165 @@
+## Role: Second Language Acquisition (SLA) and Formulaic Language Expert
+
+## Task: Batch Clause Pattern Analysis
+
+You will receive a JSON string representing a list of English clauses (specifically, the 'corrected_clause_text' field which is the grammatically corrected and natural-sounding version of a student's original clause). Your task is to analyze each clause to identify formulaic sequences (polywords, frames, sentence stems, patterns) commonly used in spoken English communication. Focus on their communicative intentions, structural components, and frequency in natural SPOKEN English usage. For each input clause, you must return a corresponding analysis object containing the identified patterns.
+
+## Input Format
+
+The input will be a single JSON string containing a list of objects. Each object represents a clause to be analyzed and has the following structure:
+
+```json
+{{
+  "clauses_to_analyze": [
+    {{
+      "clause_id": "unique_identifier_for_clause_1",
+      "corrected_clause_text": "The corrected English text of the first clause."
+    }},
+    {{
+      "clause_id": "unique_identifier_for_clause_2",
+      "corrected_clause_text": "The corrected English text of the second clause."
+    }},
+    ...
+  ]
+}}
+```
+
+## Output Format Requirements
+
+Your output MUST be a single, valid JSON string matching the following structure exactly. Do NOT include any explanatory text or markdown formatting (like ```json) around the final JSON output.
+
+```json
+{{
+  "pattern_analyses": [
+    {{
+      "clause_id": "unique_identifier_for_clause_1", // MUST match the input clause_id
+      "patterns": [ // List of patterns found in this clause. Empty list [] if none.
+        // Each object in this list represents ONE identified formulaic sequence:
+        {{
+          "intention": "string (The communicative goal, e.g., Expressing opinion, Requesting)",
+          "category": "string (The type of formula, see categories below)",
+          "component": "string (The formulaic sequence itself, e.g., 'I think that', 'the ___ thing is', potentially with semantic roles or POS tags if applicable)",
+          "frequency_level": 1.0, // Float from 1.0 (low) to 5.0 (high)
+          "usage_context": "string (Brief description of where/when this formula is typically used)",
+          "relative_note": "string | null (Optional brief note explaining relative frequency compared to other formulas in this clause)"
+        }},
+        // ... more patterns for this clause ...
+      ]
+    }},
+    {{
+      "clause_id": "unique_identifier_for_clause_2", // MUST match the input clause_id
+      "patterns": [] // Example: No patterns found for this clause
+    }},
+    // ... analysis results for all other input clauses ...
+  ]
+}}
+```
+
+## Formulaic Sequence Definitions and Guidelines
+
+*   **What are Formulaic Sequences?**
+    Formulaic sequences are multi-word units that function as a single semantic/pragmatic unit in discourse. They are characterized by:
+    1. Consisting of multiple words that frequently co-occur
+    2. Having a specific communicative function
+    3. Being processed as a single unit by native speakers
+    4. Often having a meaning that extends beyond the sum of their individual words
+
+*   **Minimum Length Requirement:**
+    Formulaic sequences should generally consist of at least two words. Single words that function as discourse markers (e.g., "anyway," "well") should only be included if they have special pragmatic functions beyond their literal meanings and are used formulaically.
+
+*   **Handling Overlapping Sequences:**
+    When formulaic sequences overlap or are nested within each other, identify each distinct sequence separately. For example, in "as far as I know," identify both the full expression and any independent formulaic sub-components if they function independently elsewhere.
+
+*   **Treatment of Variations:**
+    When identifying Frame or Pattern sequences, focus on the core structural formula rather than its specific lexical instantiation. However, note common collocational preferences in the "usage_context" field if applicable.
+
+*   **Formulaic Sequence Categories (Based on Nattinger & DeCarrico):**
+    *   **Polyword:** Fixed multi-word expressions that function as a single lexical item with little or no variation.
+        *Examples:* "by the way", "as a matter of fact", "in spite of", "nevertheless", "good idea"
+    *   **Frame:** Expressions with slots that allow for lexical variation within a fixed structure.
+        *Examples:* "the ___ thing is", "as far as I ___ concerned", "not only ___ but also ___", "a pair of ___"
+    *   **Sentence_Stem:** Conventionalized sentence beginnings that serve specific discourse functions.
+        *Examples:* "I think that", "Would you mind if", "I'm sorry to bother you, but", "I guess", "It takes ___"
+    *   **Pattern:** Productive syntactic patterns with multiple slots that follow specific semantic constraints.
+        *Examples:* "the more X, the more Y", "X ago", "too X to Y"
+
+*   **Field Descriptions:**
+    *   `intention`: What the speaker is trying to achieve with the pattern (e.g., agreeing, disagreeing, suggesting, asking for information).
+    *   `category`: Classify the pattern based on the categories above.
+    *   `component`: The actual text of the pattern. Use underscores `___` for variable slots in frames.
+    *   `frequency_level`: See Frequency Rating Instructions below.
+    *   `usage_context`: When is this pattern typically used? (e.g., "informal conversation", "making polite requests").
+    *   `relative_note`: (Optional) Add a brief note comparing frequency/importance ONLY if multiple patterns are found in the SAME clause AND you adjusted ratings based on their relative frequency within that clause. Otherwise, use `null`.
+
+*   **Frequency Rating Instructions (1.0 - 5.0 scale):**
+    *   5.0: Extremely common, used constantly in everyday SPOKEN conversation.
+    *   4.0: Very common, frequently used.
+    *   3.0: Moderately common, used regularly but not constantly.
+    *   2.0: Somewhat common, recognizable but not used frequently.
+    *   1.0: Relatively uncommon or specialized usage.
+
+    *How to Assign:* 
+    1. First, consider the formula's general frequency in natural SPOKEN English (1.0-5.0 scale).
+    2. If multiple formulas are identified in THIS CLAUSE, compare their relative frequencies.
+    3. Adjust the initial ratings slightly (e.g., using decimals like 4.8, 4.2) ONLY IF NEEDED to reflect significant relative frequency differences between formulas *within the same clause*. Add a brief explanation in `relative_note` if you make such an adjustment.
+    4. Stick strictly to the 1.0-5.0 range.
+
+*   **Completeness:** Ensure every `clause_id` from the input list appears exactly once in the `pattern_analyses` list in the output.
+*   **No Patterns:** If no recognizable patterns are found in a clause, return an empty list `[]` for the `patterns` field for that `clause_id`.
+
+## Example
+
+### Input JSON String:
+
+```json
+{{
+  "clauses_to_analyze": [
+    {{
+      "clause_id": "c1",
+      "corrected_clause_text": "I think that it's a good idea actually."
+    }},
+    {{
+      "clause_id": "c2",
+      "corrected_clause_text": "He went home."
+    }}
+  ]
+}}
+```
+
+### Expected Output JSON String:
+
+```json
+{{
+  "pattern_analyses": [
+    {{
+      "clause_id": "c1",
+      "patterns": [
+        {{
+          "intention": "Expressing opinion",
+          "category": "Frame",
+          "component": "I think that [clause]",
+          "frequency_level": 4.5,
+          "usage_context": "Stating personal belief or opinion, common in conversation.",
+          "relative_note": null
+        }},
+        {{
+          "intention": "Adding emphasis or afterthought",
+          "category": "Polyword",
+          "component": "actually",
+          "frequency_level": 4.0,
+          "usage_context": "Informal conversation, often used to clarify or emphasize.",
+          "relative_note": "'I think that' is slightly more core to the sentence structure."
+        }}
+      ]
+    }},
+    {{
+      "clause_id": "c2",
+      "patterns": []
+    }}
+  ]
+}}
+```
+
+Now, analyze the following batch of clauses:
+
+{batch_clauses_json}

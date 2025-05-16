@@ -1,0 +1,153 @@
+{
+  "metadata": {},
+  "analysis_zones": [
+    {
+      "zone_name": "ZPD-1",
+      "recommendations": [
+        {
+          "original": "Do you want play?",
+          "corrected": "Do you want to play?",
+          "priority_score": 0.513,
+          "metrics": {
+            "C": 0.1983,
+            "A": 0.7866,
+            "F": 0.0
+          },
+          "errors": [
+            {
+              "type": "Article/Preposition/Determiner/Quantifier",
+              "severity": "moderate",
+              "description": "Missing infinitive marker 'to'",
+              "correction": "to play"
+            }
+          ],
+          "clauses": [
+            {
+              "text": "Do you want play?",
+              "corrected_clause_text": "Do you want to play?",
+              "errors": [
+                {
+                  "category": "Article/Preposition/Determiner/Quantifier",
+                  "severity": "moderate",
+                  "error": "Missing infinitive marker 'to'",
+                  "correction": "to play"
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "speaker": "interviewer",
+              "text": "how about you?"
+            },
+            {
+              "speaker": "student",
+              "text": "아무것도 안해"
+            },
+            {
+              "speaker": "student",
+              "text": "I’m boring"
+            }
+          ],
+          "filtering_metadata": {
+            "decision": "KEEP",
+            "reason": "The correction correctly adds the necessary infinitive marker 'to'."
+          },
+          "pattern_analysis": [
+            {
+              "intention": "Making a suggestion or invitation",
+              "category": "Frame",
+              "component": "Do you want to [activity]?",
+              "frequency": 4.0,
+              "context": "Informal spoken English, used to invite someone to do something.",
+              "note": null
+            }
+          ],
+          "focus_type": "SMALL_GRAMMAR",
+          "reason": "The correction involves adding the infinitive marker 'to', which is a minor grammatical correction.",
+          "selected_error": {
+            "type": "Article/Preposition/Determiner/Quantifier",
+            "severity": "moderate",
+            "description": "Missing infinitive marker 'to'",
+            "correction": "to play"
+          },
+          "utterance_index": 0
+        }
+      ]
+    },
+    {
+      "zone_name": "ZPD",
+      "recommendations": [
+        {
+          "original": "Do you want to go to pc방?",
+          "corrected": "Do you want to go to a PC bang?",
+          "priority_score": 0.488,
+          "metrics": {
+            "C": 0.2414,
+            "A": 0.8869,
+            "F": 0.0
+          },
+          "errors": [
+            {
+              "type": "Article/Preposition/Determiner/Quantifier",
+              "severity": "minor",
+              "description": "Missing indefinite article before 'PC bang'",
+              "correction": "a PC bang"
+            }
+          ],
+          "clauses": [
+            {
+              "text": "Do you want to go to pc방?",
+              "corrected_clause_text": "Do you want to go to a PC bang?",
+              "errors": [
+                {
+                  "category": "Article/Preposition/Determiner/Quantifier",
+                  "severity": "minor",
+                  "error": "Missing indefinite article before 'PC bang'",
+                  "correction": "a PC bang"
+                }
+              ]
+            }
+          ],
+          "context": [
+            {
+              "speaker": "student",
+              "text": "Do you want play?"
+            },
+            {
+              "speaker": "interviewer",
+              "text": "sure. what do you want to do?"
+            },
+            {
+              "speaker": "student",
+              "text": "I want play games"
+            }
+          ],
+          "filtering_metadata": {
+            "decision": "KEEP",
+            "reason": "Adding the indefinite article 'a' before 'PC bang' is a grammatically correct and helpful clarification for non-native speakers."
+          },
+          "pattern_analysis": [
+            {
+              "intention": "Making a suggestion",
+              "category": "Frame",
+              "component": "Do you want to [verb] to a [place]?",
+              "frequency": 3.5,
+              "context": "Common in informal settings for suggesting activities.",
+              "note": null
+            }
+          ],
+          "focus_type": "SMALL_GRAMMAR",
+          "reason": "The correction adds the missing article 'a' before 'PC bang', which is a minor grammar correction.",
+          "selected_error": {
+            "type": "Article/Preposition/Determiner/Quantifier",
+            "severity": "minor",
+            "description": "Missing indefinite article before 'PC bang'",
+            "correction": "a PC bang"
+          },
+          "utterance_index": 1
+        }
+      ]
+    }
+  ]
+}

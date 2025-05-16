@@ -1,0 +1,92 @@
+You will receive a batch (list) of JSON objects, where each object represents a clause needing correction. Analyze each clause within its conversational context and provide corrections and error details.
+
+# INPUT FORMAT (per clause in the batch):
+Each item in the input list will be a JSON object with the following structure:
+```json
+{{
+  "clause_id": "<unique_identifier_for_the_clause>",
+  "clause_text": "<the_text_of_the_clause_to_correct>",
+  "context": "<string_representation_of_preceding_utterances>"
+}}
+```
+- `clause_id`: A unique ID to identify the clause.
+- `clause_text`: The text that needs correction.
+- `context`: Preceding conversation turns to understand the context.
+
+# BATCH OF CLAUSES TO PROCESS:
+{batch_clauses_json}
+
+# DETAILED CORRECTION INSTRUCTIONS:
+
+## STEP 1: UNDERSTAND LEARNER INTENT
+- Analyze the texts of the provided `context`.
+- Identify the communication goal (answering a question, making a request, etc.).
+- Consider Korean-English specific patterns that might be present:
+  * Subject omission (common in Korean)
+  * Direct translation of Korean sentence structures
+  * Topic-prominent structures instead of subject-prominent
+  * Verb positioning at the end of clauses
+  * Article/preposition challenges specific to Korean speakers
+
+## STEP 2: MAKE GRAMMATICAL CORRECTIONS
+After understanding the intent, perform the following steps:
+
+1. Grammatical Corrections
+- Correct **all clear grammatical errors** in:
+  • Verb tense/aspect • Articles • Prepositions
+  • Noun number • Pronoun reference
+  • Quantifiers ("minimum three" → "a minimum of three")
+  • Parallel structure ("knowledge and skill of..." → "knowledge of... and skills in")
+  • Subject-verb agreement
+  • Word order in questions and statements
+
+2. Natural Expression Transformations
+- Transform awkward but grammatically correct phrases:
+  • "My problem is only one" → "I have only one problem"
+  • "This is tennis elbow by bad golf" → "This tennis elbow is from playing golf badly"
+  • "So, now, I use the many times" → "So now, I use it frequently"
+- When the original structure is fundamentally unnatural but grammatical, reconstruct the sentence.
+- Pay special attention to sentence structures that follow Korean patterns rather than English ones.
+
+## STEP 3: APPLY FORMULAIC LANGUAGE PATTERNS
+If the utterance remains unclear or non-native-like after grammatical corrections:
+
+1. Identify Appropriate Formulaic Sequences
+- Apply common formulaic sequences including:
+  • Polywords (e.g., "by the way", "of course", "as well as")
+  • Collocations (e.g., "make a decision", "strong opinion", "take responsibility")
+  • Institutionalized phrases (e.g., "if you don't mind", "in other words", "to be honest")
+  • Lexical bundles (e.g., "as a result of", "on the other hand", "in terms of")
+  • Greetings and discourse markers: "Well", "You know", "I mean"
+  • Fixed expressions: "as a matter of fact", "to tell you the truth"
+
+2. Apply Pattern-Based Corrections
+- Replace non-native expressions with equivalent formulaic sequences.
+- Maintain the learner's intended meaning and vocabulary level.
+- Only add sequences that are contextually appropriate.
+- Consider what a native speaker would naturally say in the same context.
+
+## CORRECTION PRIORITIES:
+1. Errors that impede understanding
+2. Systematic grammatical errors
+3. Unnatural expressions that are technically correct
+4. Minor stylistic improvements (only if other issues are addressed)
+
+## IMPORTANT NOTE ON APPROPRIATE CORRECTION:
+- The goal is to create natural, fluent English that preserves the learner's intended meaning.
+- Use conversation context to resolve ambiguities and determine implied meanings.
+- When the literal translation is awkward but grammatically correct, prioritize creating a response that fits naturally in the conversation flow.
+
+# REQUIRED OUTPUT FORMAT:
+Your response MUST be a JSON list `[...]` where each element corresponds to one of the input clauses. Each element in the list MUST be a JSON object structured exactly as follows:
+
+```json
+{{
+  "clause_id": "<same_unique_identifier_from_input>",
+  "corrected_clause_text": "<the_fully_corrected_version_of_the_clause_text>"
+}}
+```
+- `clause_id`: MUST match the `clause_id` from the corresponding input object.
+- `corrected_clause_text`: The final corrected string. If no corrections were needed, this should be the same as the original `clause_text`.
+
+Ensure the output is a valid JSON list containing only these structured objects, one for each input clause object received in the batch.
