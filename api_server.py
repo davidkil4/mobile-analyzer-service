@@ -639,6 +639,49 @@ async def end_conversation(conversation_id: str, background_tasks: BackgroundTas
             "conversation_id": conversation_id
         }
         
+        # Generate report card data before starting teaching module generation
+        # This is a quick operation that runs synchronously
+        try:
+            logger.info("Generating report card data...")
+            report_card_start_time = time.time()
+            
+            # Define output paths for the report card data files
+            report_card_output_path = str(output_dir_path / f"{analysis_file.stem}_report_card_data.json")
+            analysis_output_path = str(output_dir_path / f"{analysis_file.stem}_analysis_data.json")
+            recommendation_output_path = str(output_dir_path / f"{analysis_file.stem}_recommendation_data.json")
+            
+            # Run the report card data generation script
+            report_card_script = os.path.join(project_root, "clustering_analysis", "generate_report_card_data.py")
+            subprocess.run(
+                [sys.executable, report_card_script, 
+                 primary_output_path, 
+                 secondary_json_path, 
+                 prioritized_json_path, 
+                 report_card_output_path],
+                check=True,
+                cwd=project_root
+            )
+            
+            report_card_time = time.time() - report_card_start_time
+            logger.info(f"Report card data generation completed in {report_card_time:.2f}s")
+            
+            # Add report card information to the clustering result
+            clustering_result["report_card"] = {
+                "status": "data_generated",
+                "output_files": {
+                    "report_card_data": report_card_output_path,
+                    "analysis_data": analysis_output_path,
+                    "recommendation_data": recommendation_output_path
+                }
+            }
+        except Exception as e:
+            logger.error(f"Error generating report card data: {str(e)}")
+            # Continue execution even if report card generation fails
+            clustering_result["report_card"] = {
+                "status": "generation_failed",
+                "error": str(e)
+            }
+        
         # Start teaching module generation in a background task
         # This allows the API to return immediately while generation continues
         background_tasks.add_task(
@@ -732,8 +775,45 @@ async def get_teaching_module(filename: str):
         logger.error(f"Error reading teaching module file {filename}: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error reading teaching module: {str(e)}")
 
+@app.get("/report_card/{conversation_id}")
+async def get_report_card(conversation_id: str):
+    """Get the report card for a specific conversation.
+    
+    This endpoint returns the content of the report card markdown file.
+    
+    Args:
+        conversation_id: The ID of the conversation to get the report card for
+        
+    Returns:
+        The content of the report card file as text/markdown
+    """
+    try:
+        # Find the report card file in the clustering output directory
+        output_dir = os.path.join(project_root, "clustering_output")
+        
+        # Look for a file matching the pattern {conversation_id}_report_card.md
+        report_card_path = None
+        for file in os.listdir(output_dir):
+            if file.startswith(conversation_id) and file.endswith("_report_card.md"):
+                report_card_path = os.path.join(output_dir, file)
+                break
+        
+        # Check if the file exists
+        if not report_card_path or not os.path.exists(report_card_path):
+            raise HTTPException(status_code=404, detail=f"Report card for conversation {conversation_id} not found")
+        
+        # Read the file content
+        with open(report_card_path, "r") as f:
+            content = f.read()
+        
+        # Return the content with the appropriate media type
+        return Response(content=content, media_type="text/markdown")
+    except Exception as e:
+        logger.error(f"Error reading report card for conversation {conversation_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error reading report card: {str(e)}")
+
 async def run_teaching_module_generation_background(prioritized_json_path: str, conversation_id: str):
-    """Background task to run the teaching module generation pipeline.
+    """Background task to run the teaching module generation pipeline and report card generation.
     
     This runs asynchronously after the API has already responded to the client,
     allowing the frontend to start polling for modules immediately.
@@ -741,16 +821,66 @@ async def run_teaching_module_generation_background(prioritized_json_path: str, 
     As each teaching module is validated and saved to the validated directory,
     it becomes immediately available through the /teaching_modules/list/{conversation_id}
     and /teaching_module/{filename} endpoints.
+    
+    The teaching module generation and report card generation run concurrently
+    using asyncio.gather to improve overall performance.
     """
     try:
+        import asyncio
+        
         logger.info(f"Starting teaching module generation pipeline using {prioritized_json_path}")
+        overall_start_time = time.time()
+        
+        # Extract the base filename for constructing report card paths
+        base_filename = os.path.basename(prioritized_json_path).replace("_secondary_prioritized.json", "")
+        output_dir = os.path.dirname(prioritized_json_path)
+        
+        # Define the report card paths
+        analysis_data_path = os.path.join(output_dir, f"{base_filename}_report_card_data_analysis.json")
+        recommendation_data_path = os.path.join(output_dir, f"{base_filename}_report_card_data_recommendation.json")
+        report_card_output_path = os.path.join(output_dir, f"{base_filename}_report_card.md")
+        
+        # Prepare tasks for concurrent execution
+        tasks = []
+        
+        # Add teaching module generation task
         teaching_start_time = time.time()
+        teaching_task = main_orchestrator(input_file=prioritized_json_path)
+        tasks.append(teaching_task)
         
-        # Run the teaching module generation pipeline
-        await main_orchestrator(input_file=prioritized_json_path)
+        # Only add report card generation task if the data files exist
+        report_card_start_time = None
+        if os.path.exists(analysis_data_path) and os.path.exists(recommendation_data_path):
+            logger.info(f"Starting report card generation using data files")
+            report_card_start_time = time.time()
+            
+            # Import the report card generation function
+            from clustering_analysis.generate_report_card import generate_report_card
+            
+            # Add report card generation task
+            report_card_task = generate_report_card(
+                analysis_data_path=analysis_data_path,
+                recommendation_data_path=recommendation_data_path,
+                output_path=report_card_output_path
+            )
+            tasks.append(report_card_task)
+        else:
+            logger.warning(f"Report card data files not found, skipping report card generation")
         
+        # Run all tasks concurrently and wait for them to complete
+        logger.info(f"Running teaching module generation and report card generation concurrently")
+        await asyncio.gather(*tasks)
+        
+        # Log completion times
         teaching_time = time.time() - teaching_start_time
         logger.info(f"Teaching module generation completed in {teaching_time:.2f}s")
+        
+        if report_card_start_time:
+            report_card_time = time.time() - report_card_start_time
+            logger.info(f"Report card generation completed in {report_card_time:.2f}s")
+            
+        overall_time = time.time() - overall_start_time
+        logger.info(f"All generation tasks completed in {overall_time:.2f}s total")
         
         # The modules are now available in the validated directory
         # The frontend can access them through the /teaching_modules/list/{conversation_id} endpoint
