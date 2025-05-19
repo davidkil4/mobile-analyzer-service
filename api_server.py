@@ -28,6 +28,11 @@ from analyzer_service.schemas import InputUtterance, PreprocessedASUnit, MainAna
 from analyzer_service.preprocessing import run_preprocessing_batch
 from analyzer_service.analysis import run_analysis_batch
 
+import httpx # For making async HTTP requests to LLM
+import jwt # For JWT verification (to be fully implemented)
+from fastapi import Depends, Header # For auth dependency
+from dotenv import load_dotenv
+
 # Import teaching module generation pipeline
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from teaching_module_generation.teaching_main import main_orchestrator
@@ -47,6 +52,302 @@ app.include_router(db_router)
 
 # Include the test JWT endpoint router
 setup_user_module_routes(app)
+
+# Pydantic models for Tutor LLM Chat
+class TutorMessage(BaseModel):
+    role: str  # "user" or "assistant" (or "system" if used in prompt construction)
+    content: str
+
+class TutorConversationContextItem(BaseModel):
+    role: str  # Was 'speaker'
+    content: str # Was 'text'
+
+class TutorChatRequest(BaseModel):
+    messages: List[TutorMessage]
+    conversation_context: Optional[List[TutorConversationContextItem]] = None
+
+class TutorChatResponse(BaseModel):
+    reply: Optional[str] = None
+    error: Optional[str] = None
+
+# Pydantic models for Tutor LLM Feedback
+class FeedbackRequest(BaseModel):
+    message_for_feedback: TutorMessage # The user's own message to be reviewed
+    conversation_history: Optional[List[TutorMessage]] = None # Surrounding A-B chat context
+
+class FeedbackResponse(BaseModel):
+    feedback_text: Optional[str] = None
+    error: Optional[str] = None
+
+
+# --- Environment Variables ---
+load_dotenv()
+
+LLM_API_KEY = os.getenv("LLM_API_KEY")
+LLM_API_ENDPOINT_URL = os.getenv("LLM_API_ENDPOINT_URL") # e.g., OpenAI's chat completion URL
+CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL") # For later real JWT verification
+
+if not LLM_API_KEY:
+    logger.warning("LLM_API_KEY not found. Tutor LLM functionality will be limited or non-functional.")
+if not LLM_API_ENDPOINT_URL:
+    logger.warning("LLM_API_ENDPOINT_URL not found. Tutor LLM cannot make API calls.")
+
+# --- Authentication (Placeholder) --- 
+async def placeholder_verify_token(authorization: Optional[str] = Header(None)) -> str:
+    """
+    PLACEHOLDER: This function simulates token verification for development.
+    IT DOES NOT PERFORM REAL AUTHENTICATION AND MUST BE REPLACED.
+    In a real scenario, this would verify a JWT from Clerk.
+    """
+    logger.warning("USING PLACEHOLDER TOKEN VERIFICATION - NOT FOR PRODUCTION!")
+    if authorization:
+        logger.info(f"Placeholder auth: Received authorization header: {authorization[:20]}...")
+    # For development, bypass actual verification and return a mock user ID
+    # This allows frontend to send a token, and backend to proceed as if verified.
+    # When implementing real JWT, extract user_id from the verified token.
+    return "mock-user-id-from-placeholder-auth"
+
+# --- Tutor LLM Endpoint ---
+@app.post("/tutor/chat", response_model=TutorChatResponse)
+async def handle_tutor_chat(
+    request_data: TutorChatRequest,
+    current_user_id: str = Depends(placeholder_verify_token) # Using placeholder auth for now
+):
+    logger.info(f"Received tutor chat request for user: {current_user_id} with data: {request_data}")
+
+    if not LLM_API_KEY or not LLM_API_ENDPOINT_URL:
+        logger.error("LLM_API_KEY or LLM_API_ENDPOINT_URL is not configured.")
+        return TutorChatResponse(error="LLM service not configured on server.")
+
+    model_name = os.getenv("LLM_MODEL_NAME", "gemini-1.5-flash-latest") # Default to a known flash model
+    if model_name == "gemini-2.0-flash":
+        logger.info("Using specified LLM_MODEL_NAME: gemini-2.0-flash")
+    elif os.getenv("LLM_MODEL_NAME") is None:
+        logger.info("LLM_MODEL_NAME not set, defaulting to gemini-1.5-flash-latest. Set LLM_MODEL_NAME in .env to use a different model.")
+    else:
+        logger.info(f"Using LLM_MODEL_NAME from .env: {model_name}")
+
+    # Construct the Gemini API URL
+    # Assumes LLM_API_ENDPOINT_URL is the base (e.g., https://generativelanguage.googleapis.com/v1beta)
+    gemini_api_url = f"{LLM_API_ENDPOINT_URL.rstrip('/')}/models/{model_name}:generateContent?key={LLM_API_KEY}"
+
+    # Construct the payload for the Gemini API
+    gemini_contents = []
+    
+    # System Instruction - Gemini handles this best as the first user message followed by a model ack, or via specific system_instruction field
+    # For broader compatibility, using the chat message approach:
+    system_instruction = "You are a helpful and friendly English language tutor. Provide concise and clear explanations. Focus on common mistakes and practical advice for ESL learners."
+    gemini_contents.append({"role": "user", "parts": [{"text": system_instruction}]})
+    gemini_contents.append({"role": "model", "parts": [{"text": "Okay, I understand. I will act as a helpful English tutor."}]})
+
+    # Add conversation context from the main chat if provided
+    if request_data.conversation_context:
+        context_text_parts = []
+        context_header = "Context from the main conversation:" # Simplified header
+        context_text_parts.append(context_header)
+        for ctx_msg in request_data.conversation_context: # Now ctx_msg has .role and .content
+            # Construct a more natural-sounding context entry
+            context_text_parts.append(f"- A message from '{ctx_msg.role}': \"{ctx_msg.content}\"") 
+        
+        if len(context_text_parts) > 1: # Only add if there's more than just the header
+             gemini_contents.append({"role": "user", "parts": [{"text": "\n".join(context_text_parts)}]})
+             gemini_contents.append({"role": "model", "parts": [{"text": "Thanks for that context. Now, what's your specific question for me?"}]}) # Adjusted model ack
+
+    # Add messages from the current tutor chat
+    for msg in request_data.messages:
+        # Map 'assistant' role from TutorMessage to 'model' for Gemini
+        gemini_role = "model" if msg.role == "assistant" else msg.role
+        gemini_contents.append({"role": gemini_role, "parts": [{"text": msg.content}]})
+
+    # Ensure the last message is from the user if the list is not empty
+    if not gemini_contents or gemini_contents[-1]["role"] != "user":
+        logger.warning("Final content for Gemini API is not a user turn. This might lead to unexpected responses or errors.")
+        # Depending on strictness of the model, this might need actual user content.
+        # For now, we proceed, but this is a potential area for improvement.
+
+    payload = {
+        "contents": gemini_contents,
+        "generationConfig": {
+            "temperature": 0.7,
+            "topP": 1,
+            "topK": 1,
+            "maxOutputTokens": 250, # Adjust as needed
+        },
+        "safetySettings": [
+            {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+        ]
+    }
+
+    headers = {
+        "Content-Type": "application/json",
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            logger.info(f"Sending request to Gemini LLM: {gemini_api_url}")
+            logger.debug(f"Gemini payload: {json.dumps(payload, indent=2)}") # Log full payload only in debug
+            response = await client.post(gemini_api_url, json=payload, headers=headers)
+            response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+
+            llm_response_data = response.json()
+            logger.info(f"Received response from Gemini LLM.") # Avoid logging full response by default due to size/PII
+            logger.debug(f"Gemini response data: {json.dumps(llm_response_data, indent=2)}")
+
+            # Extract reply text from Gemini response
+            if not llm_response_data.get("candidates") or not llm_response_data["candidates"][0].get("content") or not llm_response_data["candidates"][0]["content"].get("parts"):
+                logger.error(f"LLM response format unexpected or empty: {llm_response_data}")
+                return TutorChatResponse(error="Failed to get a valid response from tutor (Invalid format).")
+            
+            reply_text = llm_response_data["candidates"][0]["content"]["parts"][0].get("text", "")
+            
+            if not reply_text:
+                logger.warning(f"LLM response contained no text in parts: {llm_response_data}")
+                # Sometimes Gemini might return a candidate with no text if blocked by safety or other reasons.
+                # Check for promptFeedback if available
+                prompt_feedback = llm_response_data.get("promptFeedback", {})
+                block_reason = prompt_feedback.get("blockReason", None)
+                if block_reason:
+                    logger.error(f"LLM request was blocked. Reason: {block_reason}")
+                    return TutorChatResponse(error=f"Tutor could not respond (request blocked: {block_reason}).")
+                return TutorChatResponse(error="Failed to get a text response from tutor.")
+
+            return TutorChatResponse(reply=reply_text.strip())
+
+    except httpx.HTTPStatusError as e:
+        error_text = e.response.text
+        logger.error(f"HTTP error occurred while calling LLM: {e.response.status_code} - {error_text}")
+        error_detail = f"LLM API request failed with status {e.response.status_code}."
+        try:
+            error_content = e.response.json()
+            if error_content and 'error' in error_content and 'message' in error_content['error']:
+                error_detail += f" Message: {error_content['error']['message']}"
+        except json.JSONDecodeError:
+            # If response isn't JSON, use the raw text if it's not too long
+            if len(error_text) < 200:
+                 error_detail += f" Details: {error_text}"
+        return TutorChatResponse(error=error_detail)
+    except httpx.RequestError as e:
+        logger.error(f"Request error occurred while calling LLM: {e}")
+        return TutorChatResponse(error=f"Could not connect to LLM service: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred in tutor chat: {e}", exc_info=True)
+        return TutorChatResponse(error="An unexpected error occurred while talking to the tutor.")
+
+# --- Tutor LLM Feedback Endpoint --- 
+@app.post("/tutor/feedback", response_model=FeedbackResponse)
+async def handle_tutor_feedback(
+    request_data: FeedbackRequest,
+    current_user_id: str = Depends(placeholder_verify_token) # Using placeholder auth for now
+):
+    logger.info(f"Received tutor feedback request for user: {current_user_id} on message: '{request_data.message_for_feedback.content}'")
+    logger.debug(f"Full feedback request data: {request_data}")
+
+    if not LLM_API_KEY or not LLM_API_ENDPOINT_URL:
+        logger.error("LLM_API_KEY or LLM_API_ENDPOINT_URL is not configured for feedback.")
+        return FeedbackResponse(error="LLM service not configured on server for feedback.")
+
+    # Placeholder for LLM call logic
+    # TODO: Implement LLM call with specific feedback prompt
+    
+    # Dummy response for now
+    # return FeedbackResponse(feedback_text="This is a placeholder feedback.")
+
+    try:
+        # Simulate LLM processing delay (optional)
+        # await asyncio.sleep(1)
+
+        # Construct the prompt for Gemini (this will be more complex)
+        model_name = os.getenv("LLM_MODEL_NAME", "gemini-1.5-flash-latest")
+        gemini_api_url = f"{LLM_API_ENDPOINT_URL.rstrip('/')}/models/{model_name}:generateContent?key={LLM_API_KEY}"
+        
+        # System Instruction - Tailored for feedback
+        system_instruction_feedback = (
+            "You are an English language tutor. The user has sent a message in a conversation, and they want feedback on it. "
+            "Your task is to provide constructive feedback ONLY on the 'User's message for feedback' provided below. "
+            "Focus on areas like grammar, word choice, phrasing, naturalness, and fluency. "
+            "Keep your feedback concise, actionable, and encouraging. Structure it well, perhaps using bullet points for clarity. "
+            "Do NOT comment on or repeat parts of the 'Conversation Context' unless it's absolutely essential to explain your feedback on the user's message. "
+            "Do NOT give general advice, only feedback on the specific message."
+        )
+        
+        gemini_contents = []
+        gemini_contents.append({"role": "user", "parts": [{"text": system_instruction_feedback}]})
+        gemini_contents.append({"role": "model", "parts": [{"text": "Okay, I understand my role. I will provide feedback only on the specified user message, using the context if necessary. Please provide the conversation context and the user's message for feedback."}]})
+
+        # Add conversation context (if any)
+        if request_data.conversation_history:
+            context_parts = ["Conversation Context:"]
+            for msg in request_data.conversation_history:
+                # For context, 'user' means the app user, 'model' means their chat partner
+                context_parts.append(f"- Message from '{msg.role}': \"{msg.content}\"") 
+            gemini_contents.append({"role": "user", "parts": [{"text": "\n".join(context_parts)}]})
+            gemini_contents.append({"role": "model", "parts": [{"text": "Thank you for the context."}]})
+
+        # Add the user's message for feedback
+        user_message_for_feedback_text = (
+            f"User's message for feedback:\n"
+            f"- {request_data.message_for_feedback.role}: \"{request_data.message_for_feedback.content}\"\n\n"
+            f"Your feedback on the 'User's message for feedback':"
+        )
+        gemini_contents.append({"role": "user", "parts": [{"text": user_message_for_feedback_text}]})
+
+        payload = {
+            "contents": gemini_contents,
+            "generationConfig": {
+                "temperature": 0.6, # Slightly lower temp for more focused feedback
+                "topP": 1,
+                "topK": 1,
+                "maxOutputTokens": 300, # Allow for slightly longer feedback
+            },
+            "safetySettings": [
+                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_MEDIUM_AND_ABOVE"},
+            ]
+        }
+
+        headers = {"Content-Type": "application/json"}
+
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            logger.info(f"Sending feedback request to Gemini LLM: {gemini_api_url}")
+            logger.debug(f"Gemini feedback payload: {json.dumps(payload, indent=2)}")
+            response = await client.post(gemini_api_url, json=payload, headers=headers)
+            response.raise_for_status()
+
+            llm_response_data = response.json()
+            logger.info("Received feedback response from Gemini LLM.")
+            logger.debug(f"Gemini feedback response data: {json.dumps(llm_response_data, indent=2)}")
+
+            if not llm_response_data.get("candidates") or \
+               not llm_response_data["candidates"][0].get("content") or \
+               not llm_response_data["candidates"][0]["content"].get("parts"):
+                logger.error(f"LLM feedback response format unexpected: {llm_response_data}")
+                return FeedbackResponse(error="Failed to get valid feedback from tutor (Invalid format).")
+            
+            feedback_text = llm_response_data["candidates"][0]["content"]["parts"][0].get("text", "")
+
+            if not feedback_text:
+                prompt_feedback_info = llm_response_data.get("promptFeedback", {})
+                block_reason = prompt_feedback_info.get("blockReason", "unknown reason")
+                safety_ratings = prompt_feedback_info.get("safetyRatings", [])
+                logger.warning(f"LLM feedback response was empty. Block reason: {block_reason}, Safety: {safety_ratings}")
+                return FeedbackResponse(error=f"Tutor could not provide feedback (empty response, possibly due to safety filters: {block_reason}).")
+
+            return FeedbackResponse(feedback_text=feedback_text)
+
+    except httpx.HTTPStatusError as e:
+        logger.error(f"LLM feedback HTTP error: {e.response.status_code} - {e.response.text}")
+        return FeedbackResponse(error=f"Error from tutor service: {e.response.status_code}")
+    except httpx.RequestError as e:
+        logger.error(f"LLM feedback request error: {e}")
+        return FeedbackResponse(error=f"Could not connect to tutor service: {e}")
+    except Exception as e:
+        logger.error(f"Unexpected error in tutor feedback: {e}", exc_info=True)
+        return FeedbackResponse(error="An unexpected error occurred while getting feedback.")
 
 # In-memory storage for batching and analysis results (per conversation)
 conversations: Dict[str, List[Dict[str, Any]]] = {}
@@ -73,6 +374,7 @@ class MessageRequest(BaseModel):
     speaker: str  # e.g., "main user", "other user"
     text: str
     timestamp: Optional[int] = None
+
 
 class AnalysisResponse(BaseModel):
     batch_id: str
